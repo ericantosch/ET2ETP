@@ -94,11 +94,11 @@
       \node[DeepBlue!95,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
     }
 
-  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] at ($(current page.north east)+(0,-9.5)$){{\fontsize{25}{30} \selectfont \bfseries TITLE OF THE REPORT}};
+  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] at ($(current page.north east)+(0,-9.5)$){{\fontsize{25}{30} \selectfont \bfseries ET2 - Praktikum 5}};
 
-  \node[left,DeepBlue!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-11)$){{\huge \textit{Subtitle of the Report}}};
+  \node[left,DeepBlue!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-11)$){{\huge \textit{Resonanz}}};
 
-  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-13)$){{\Large \textsc{Author Name}}};
+  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-13)$){{\Large \textsc{Florian Tietjen\hspace{0.5cm}Eric Antosch}}};
 
 \end{tikzpicture}
 
@@ -110,10 +110,12 @@
 
 \newpage
 
-\section{Serieninduktivität eines Drahtwiderstands}
+
+\section{Vorbereitung}
+
+\section{Resonanz - Eingeschwungener Zustand}
 \begin{task}
-  IIm ersten Versuch soll die Serieninduktivität eines Drahtwiderstands erst über Messung der Serienresonanzfrequenz bei
-  gegebenem Kondensator berechnet werden. Im Anschluss wird dann das Ergebnis genutzt, um das Verhalten der Schaltung bei Parallelresonanzfrequenz zu untersuchen.
+  IIm ersten Versuch soll Peter
 \end{task}
 \begin{figure}[h]
   \begin{center}
@@ -176,7 +178,7 @@ Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten 
 
 
 \newpage
-\section{Verlustwiderstand einer Induktivität}
+\section{Resonanz - Schaltverhalten}
 \begin{task}
   IIm zweiten Versuch soll durch das Ermitteln des Verlustwiderstands in Abhängigkeit von der Frequenz der Einfluss selbiger auf das Verhalten des Verlustwiderstands erarbeitet werden.
   Gleichzeitig ist das Einstellen einer Kapazitätsdekade auf Resonanzfrequenz mit der Induktivität Gegenstand der Aufgabe.
@@ -256,61 +258,4 @@ Aus der Abbildung und den Messwerten folgt nun, dass bei kleinen Frequenzen bis 
 Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die
 Frequenzabhängigkeit eines Widerstandes eindrucksvoll klar. Es ist außerdem anzumerken, dass sich daraus, für die Anwendung in echten Schaltkreisen eine Präferenz für niedrige Frequenzen ergibt,
 wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst gering zu halten.
-\newpage
-
-\section{Serienverlustwiderstand eines Becherelkos}
-\begin{task}
-  IIm dritten und letzten Versuch soll nun der Serienverlustwiderstand eines RC-Glieds in einer Brückenschaltung gemessen und errechnet werden.
-  Dazu soll das Variieren einer Widerstands- und Kapazitätsdekade zum Abgleich einer einfachen Brückenschaltung als Methode der Messung geübt werden.
-\end{task}
-\begin{figure}[h]
-  \begin{center}
-
-    \caption{Schaltplan der Brückenschaltung}
-  \end{center}
-\end{figure}
-\begin{devlist}
-  T
-  \begin{itemize}
-    \item Transformator Sennheiser RVZ11
-    \item Oszilloskop: Tektronix MDO3012
-    \item Kapazitätsdekade: Time Electronics Model 1071 CapBox
-    \item Widerstandsdekade: Time Electronics Model 1051 ResBox
-    \item Funktionsgenerator: Keysight 33210A
-  \end{itemize}
-\end{devlist}
-\subsection{Vorbereitung}
-Unter der Vorraussetzung, dass die Variation des einstellbaren RC-Glieds ein Abgleich der Brückenschaltung hervorruft, gilt:
-\begin{align*}
-  \frac{C_N}{C_X} & = \frac{R_1}{R_2} \\
-  \frac{R_N}{R_X} & = \frac{R_2}{R_1} \\
-\end{align*}
-Aus diesen Vorraussetzungen folgt dann:
-\begin{align}
-  \frac{C_N\cdot R_2}{R_1} & = C_X\label{eq:CX} \\
-  \frac{R_N\cdot R_1}{R_2} & = R_X\label{eq:RX}
-\end{align}
-\subsection{Versuchsdurchführung}
-Wir stellen am Funktionsgenerator jeweils die Frequenzen $f= 100Hz, 500Hz\text{ und }1kHz$ ein und ermitteln die Kapazität $C_X$ und den Verlustwiderstand $R_X$
-und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse dann mit dem HP 4294A Impedance Analyzer überprüft.
-
-\subsection{Auswertung}
-
-\begin{center}
-  \begin{tabular}{|c|c|c|c|}
-    \hline
-    $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
-    \hline
-    100            & $1000$           & $81$                 & $4,2$                  \\
-    \hline
-    500            & $988$            & $21$                 & $6,4$                  \\
-    \hline
-    1000           & $898$            & $20$                 & $4,2$                  \\
-    \hline
-  \end{tabular}
-\end{center}
-Wir erkennen einen deutlichen Abfall der Kapazität des Becherelkos sowie ihres Serienwiderstandes bei steigender Frequenz. Im
-Gegensatz zur Aufgabe 2 ist hier der Einfluss des Skin-Effektes nicht zu verspüren, da hier keine hochfrequenten Signale verwendet werden. Bei der Bestimmung von unbekannten
-passiven Bauelementen ist es also förderlich auch die Frequenz bei der Analyse der Ergebnisse mit einzubeziehen und dann gegebenenfalls auch eine Bezugsfrequenz festzulegen.
-
 \end{document}
