@@ -316,10 +316,57 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
       95  &                                           &                                          &             &                                   \\
       \hline
     \end{tabular}
-    \caption{Messwerte für Versuch 1.1}
-    \label{tab:MV}
+    \caption{Messwerte für Versuch 2}
+    \label{tab:MV2}
   \end{center}
 \end{table}
+
+\subsubsection{Graphische Darstellung}
+
+\subsubsection{Berechnung der Güte und der Bandbreite}
+
+\begin{table}[h!]
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      Resonanzfrequenz &  & \\
+      \hline
+      Q                &  & \\
+      \hline
+      $\Delta$f        &  & \\
+      \hline
+    \end{tabular}
+    \caption{Aus den Messwerten berechnete Güte und Bandbreite}
+    \label{tab:zMGB}
+  \end{center}
+\end{table}
+
+\subsection{Vergleich}
+
+
+\subsection{Versuch mit höheren Resonanzfrequenzen}
+
+\begin{table}[h]
+
+  \begin{center}
+
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline $\mathrm{f}$       & $\mathrm{C}$        & $\hat{u}_{g e n}$ & $\hat{u}_C$       & $\mathrm{Q}$ \\
+      \hline $5 \mathrm{kH} z$  & $10,13 \mathrm{nF}$ & $166 \mathrm{mV}$ & $4,00 \mathrm{V}$ & 24,1         \\
+      \hline $10 \mathrm{kH} z$ & $2,53 \mathrm{nF}$  & $166 \mathrm{mV}$ & $3,2 \mathrm{V}$  & 19,28        \\
+      \hline
+    \end{tabular}
+    \caption{Ergebnis aus der Testreihe mit höheren Frequenzen}
+    \label{tab:lCUQ}
+  \end{center}
+\end{table}
+$$Q=\frac{1}{R} \cdot \sqrt{\frac{L}{C}} \Leftrightarrow R=\frac{1}{Q} \cdot \sqrt{\frac{L}{C}}$$
+\begin{equation*}
+  \text { Bei } f=5 k H z: \quad R=\frac{1}{24,1} \cdot \sqrt{\frac{100 m H}{10,13 n F}}=130,37 \Omega
+\end{equation*}
+\begin{equation*}
+  \text { Bei } f=10 \mathrm{kHz}: \quad R=\frac{1}{19,28} \cdot \sqrt{\frac{100 \mathrm{mH}}{2,53 \mathrm{nF}}}=326,1 \Omega
+\end{equation*}
 
 \newpage
 \section{Resonanz - Schaltverhalten}
@@ -349,18 +396,18 @@ Messwerte:
 
     \begin{tabular}{|c|c|c|c|}
       \hline
-        $T_d$ &$\overline{u}$ & $y_i$  & $y_{i+1}$\\
+      $T_d$  & $\overline{u}$ & $y_i$   & $y_{i+1}$ \\
       \hline
-             ca 1ms&    ca -1v&   ca860mV  &    ca340mV    \\         
+      ca 1ms & ca -1v         & ca860mV & ca340mV   \\
       \hline
     \end{tabular}
   \end{center}
 \end{table}
 Berechnung des Dämpfungsmaß:
 \begin{align*}
-  \delta &= \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right)\\
-  \omega &= 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = hier muss ca das gleiche wie unten rauskommen \\
-  \omega_r &= \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{100mH \cdot 253,3nF}} = 6283 s^{-1}
+  \delta   & = \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right)                                \\
+  \omega   & = 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = hier muss ca das gleiche wie unten rauskommen \\
+  \omega_r & = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{100mH \cdot 253,3nF}} = 6283 s^{-1}
 \end{align*}
 
 
