@@ -119,70 +119,80 @@ hat einen Innenwiderstand von $R_i = 50\Omega$. Die angegebene Größe der Induk
 \subsection{Berechnung der erforderlichen Kapazität}
 Die Formel zur Berechnung der Resonanzfrequenz wird nach der Kapazität C umgestellt.
 \begin{align*}
-  \omega_r &= \frac{1}{\sqrt{LC}}\\
-  C &= \frac{1}{{w_r}^2L}
+  \omega_r & = \frac{1}{\sqrt{LC}} \\
+  C        & = \frac{1}{{w_r}^2L}
 \end{align*}
 Mit der Formel werden nun die Kapazitäten verschiedener Frequenzen ausgerechnet:
-\begin{center}
 
-  \begin{tabular}{|c|c|c|c|c|c|}    
-    \hline
-    Freqeunz               & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
-    \hline
-    Kapazität              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
-    \hline
-  \end{tabular}
-
-\end{center}
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      Frequenz  & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      \hline
+      Kapazität & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      \hline
+    \end{tabular}
+    \caption{Berechnete Kapazitätswerte in Abhängigkeit von einer festen Frequenz}
+    \label{tab:cFC}
+  \end{center}
+\end{table}
 
 \subsection{Berechnung der Gütefaktoren und Bandbreiten}
 Nun werden die zugehörigen Gütefaktoren Q und Bandbreiten $\Delta$f für jeweils den Gesamtverlustwiderstand R$_i$ + R$_L$ und den Spulen-Drahtwiderstand R$_L$ allein berechnet.
 Für den Gesamtverlustwiderstand gilt:
 \begin{align*}
-  R_{ges} &= R_i + R_L= 50\Omega + 10\Omega = 60\Omega
+  R_{ges} & = R_i + R_L= 50\Omega + 10\Omega = 60\Omega
 \end{align*}
 Die Formel der Güte einer Serienschaltung lautet:
 \begin{align*}
-  Q &= \frac{1}{R}\cdot\sqrt{\frac{L}{C}}
+  Q & = \frac{1}{R}\cdot\sqrt{\frac{L}{C}}
 \end{align*}
 Für die Bandbreite $\Delta$f ermittelt sich aus:
 \begin{align*}
-  B &= \frac{f_r}{Q}
+  B & = \frac{f_r}{Q}
 \end{align*}
 Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
+\begin{table}[h]
 
-\begin{center}
+  \begin{center}
 
-  \begin{tabular}{|c|c|c|c|c|c|}    
-    \hline
-    Freqeunz               & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
-    \hline
-    $Q_{R_{ges}}$              & $25,33\mu F$               & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
-    \hline
-    $Q_L$              & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
-    \hline
-    $\Delta f_{R_{ges}}$              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
-    \hline
-    $\Delta f_L$              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
-    \hline
-  \end{tabular}
-
-\end{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      Freqeunz             & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      \hline
+      $Q_{R_{ges}}$        & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      \hline
+      $Q_L$                & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      \hline
+      $\Delta f_{R_{ges}}$ & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      \hline
+      $\Delta f_L$         & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      \hline
+    \end{tabular}
+    \caption{Güte und Bandbreite in Abhängigkeit von dem betrachtetem Widerstand und der Frequenz}
+    \label{tab:cGB}
+  \end{center}
+\end{table}
 
 
 
 \newpage
+
 \section{Resonanz - Eingeschwungener Zustand}
+\subsection{Versuch 1}
 \begin{task}
   IIm ersten Versuch soll der Amplitudengang von $\hat{u}_C$ in der abgebildeten Schaltung mit dem Oszilloskop ermittelt werden. Dazu soll beachtet werden,
   dass $R_i = 50\Omega$ und $\hat{u}_{gen} = 1V$ sind. Die Kapazitätsdekade wird mit den berechneten Werten aus der Vorbereitung eingestellt.
 \end{task}
+
 \begin{figure}[h]
   \begin{center}
-
-    \caption{Schaltplan zur Bestimmung der Serienimpedanz eines Drahtwiderstands}
+    \includegraphics{../assets/images/ETP3/Versuch1Schaltplan.PNG}
+    \caption{Schaltplan zum ersten Versuch der ersten Aufgaben zur Bestimmung des Spannungsverhältnisses $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
   \end{center}
 \end{figure}
+
 \begin{devlist}
   T
   \begin{itemize}
@@ -193,7 +203,9 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
   \end{itemize}
 \end{devlist}
 
-\subsection{Bestimmung von $\hat{u}_C$/$\hat{u}_{gen}$}
+\newpage
+
+\subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
 
 \begin{table}[h]
   \begin{center}
@@ -204,29 +216,29 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
       \hline
       -95 &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      -50 &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      -40 &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      -20 &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      -10 &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      -5  &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      0   &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      5   &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      10  &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      20  &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      40  &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      50  &                      &                     \\
       \hline
-      -95 &                      &                     \\
+      95  &                      &                     \\
       \hline
     \end{tabular}
     \caption{Messwerte für Versuch 1.1}
@@ -234,23 +246,80 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
   \end{center}
 \end{table}
 
+\subsubsection{Graphische Darstellung der Ergebnisse}
 
+\subsubsection{Ermittlung der Güte und der Bandbreite}
 
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      Resonanzfrequenz &  & \\
+      \hline
+      Q                &  & \\
+      \hline
+      $\Delta$f        &  & \\
+      \hline
+    \end{tabular}
+    \caption{Aus den Messwerten berechnete Güte und Bandbreite}
+    \label{tab:eMGB}
+  \end{center}
+\end{table}
+\newpage
+\subsection{Versuch 2}
 
-\subsection{Auswertung}
+\begin{task}
+  IIm nächsten Abschnitt soll nun mithilfe eines Operationsverstärker-Impedanzwandlers
+  der Innenwiderstand des Generators abgekoppelt werden. Um keine Verzerrungen bei der Erfassung
+  des Signals zu bekommen, ist es hilfreich die Generatorspannung $\hat{u}_{gen}$ geringer zu wählen.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics{../assets/images/ETP3/Versuch2Schaltplan.PNG}
+    \caption{Schaltplan für den zweiten Versuch mit Operationsverstärker-Impedanzwandler}
+  \end{center}
+\end{figure}
 
-Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = 835kHz$.
-Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = 3,633\mu H$\\[3pt]
-Um nun die Serienresonanzfrequenz mit der Parallelresonanzfrequenz zu vergleichen, setzen wir unsere errechnete Induktivität in
-(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = 648,745kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
-die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = 652kHz$ ablesen.
+\begin{table}[h]
+  \begin{center}
 
-Da unsere Rechnungen auf der Annahme beruhen, dass unsere Bauteile, im Besonderen der Kondensator, bei jeder Frequenz die gleichen Kenngrößen haben,
-erkennen wir eine mögliche Fehlerquelle. Mit dem HP4294A messen wir bei den bestimmten Resonanzfrequenzen die Kapazität aus und erhalten bei $f_{1Res}$ eine Kapazität
-von $C_{f1}=9,53nF$ und bei $f_{2Res}$ eine Kapazität von $C_{f2} = 9,55nF$. Aus den angepassten Werten ergibt sich dann eine Serieninduktivität von $L_S = 3,812\mu F$
-und eine Parallelresonanzfrequenz von $f_{2Res} = 666,922kHZ$. Da allerdings diese Messwerte sich implizit auf den "falschen" Messwerten beruhen, sind hier die Toleranzen aufgrund der
-Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten und deren Bedienung.
-
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+          & \multicolumn{2}{c|}{$500Hz; C=1,01\mu F$} & \multicolumn{2}{c|}{$1kHz; C= 253,3 nF$}                                                   \\
+      \hline
+          & $\hat{u}_C$                               & $\frac{\hat{u}_C}{\hat{u}_{gen}}$        & $\hat{u}_C$ & $\frac{\hat{u}_C}{\hat{u}_{gen}}$ \\
+      \hline
+      -95 &                                           &                                          &             &                                   \\
+      \hline
+      -50 &                                           &                                          &             &                                   \\
+      \hline
+      -40 &                                           &                                          &             &                                   \\
+      \hline
+      -20 &                                           &                                          &             &                                   \\
+      \hline
+      -10 &                                           &                                          &             &                                   \\
+      \hline
+      -5  &                                           &                                          &             &                                   \\
+      \hline
+      0   &                                           &                                          &             &                                   \\
+      \hline
+      5   &                                           &                                          &             &                                   \\
+      \hline
+      10  &                                           &                                          &             &                                   \\
+      \hline
+      20  &                                           &                                          &             &                                   \\
+      \hline
+      40  &                                           &                                          &             &                                   \\
+      \hline
+      50  &                                           &                                          &             &                                   \\
+      \hline
+      95  &                                           &                                          &             &                                   \\
+      \hline
+    \end{tabular}
+    \caption{Messwerte für Versuch 1.1}
+    \label{tab:MV}
+  \end{center}
+\end{table}
 
 \newpage
 \section{Resonanz - Schaltverhalten}

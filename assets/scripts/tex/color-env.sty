@@ -78,7 +78,7 @@
 
 %%%%%%%%%%%%% definition %%%%%%%%%%%%%%%
 \newcounter{def}[subsection]\setcounter{def}{0}
-\renewcommand{\thedef}{\arabic{section}}
+\renewcommand{\thedef}{\arabic{section}.\arabic{subsection}}
 \newenvironment{task}[2][]{%
 	\refstepcounter{def}%
 	\ifstrempty{#1}%
