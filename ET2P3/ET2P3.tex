@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage{circuitikz} %Für die Schaltpläne
+\usepackage{circuitikz}
 \usepackage[T1]{fontenc} 
 \usepackage[UTF8]{inputenc}
 \usepackage{amsmath}
@@ -9,12 +9,27 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{tikz}
-\usepackage{assets/scripts/tex/color-env}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{shapes}
+  \usetikzlibrary{arrows.meta,topaths}
+  \usetikzlibrary{bending}
+  \usetikzlibrary{calc}
+\usepackage{anyfontsize}
+\usepackage{sectsty}
+\usepackage{../assets/scripts/tex/color-env}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+\definecolor{DarkGreenBlue}{HTML}{264653}
+\definecolor{LightGreenBlue}{HTML}{2A9D8F}
+\definecolor{LightOrange}{HTML}{E9C46A}
+\definecolor{DarkOrange}{HTML}{F4A261}
+\definecolor{RedOrange}{HTML}{E76F51}
+\definecolor{BrightRed}{HTML}{D62828}
+\definecolor{DeepBlue}{HTML}{003049}
+
+
+
 \usepackage[ngerman]{babel}
-    \usetikzlibrary{arrows}
-    \usetikzlibrary{arrows.meta,topaths}
-    \usetikzlibrary{bending}
-    \usetikzlibrary{calc}
 \title{Elektrotechnik 1 - Praktikum 1}
 
 
@@ -26,9 +41,6 @@
   bmargin = \dimexpr17mm+2\ht\strutbox\relax,
 ]{geometry}
 
-\usepackage{anyfontsize}
-
-\usepackage{xcolor}
 
 
 
@@ -38,85 +50,58 @@
 \fancyhead[R]{}
 \fancyfoot[L]{}
 \fancyfoot[C]{\thepage}
-\fancyfoot[R]{\includegraphics[scale=0.2]{assets/images/haw.jpg}}
+\fancyfoot[R]{\includegraphics[scale=0.2]{../assets/images/haw.jpg}}
 \renewcommand\headrulewidth{0.5pt}
 
 
 \begin{document}
 
 
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
 
-\begin{tikzpicture}[overlay,remember picture]
-  \thispagestyle{empty}
-  \fill[black!2] (current page.south west) rectangle (current page.north east);
+  \fill[DeepBlue] (current page.south west) rectangle (current page.north east);
 
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+  \begin{scope}
 
-    \shade[rounded corners=18pt, left color=green, right color=blue!40] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
-
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
-
-    \shade[rounded corners=18pt, left color=lightgray,right color=lightgray!60] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+    \foreach \i in {2.5,...,22}
+      {
+        \node[rounded corners, DeepBlue!90,draw ,regular polygon, regular polygon sides=6, minimum size=\i cm, ultra thick] at ($(current page.west)+(2.5,-5)$) {} ;
+      }
 
   \end{scope}
 
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+  \node[rounded corners,fill=DeepBlue!95,text =DeepBlue!5,regular polygon,regular polygon sides=6, minimum size=2.5 cm,inner sep=0,ultra thick] at ($(current page.west)+(2.5,-5)$) {\LARGE \bfseries 2020};
 
-    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+  \foreach \i in {0.5,...,22}
+    {
+      \node[rounded corners,DeepBlue!90,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north west)+(2.5,0)$) {} ;
+    }
 
-  \end{scope}
+  \foreach \i in {0.5,...,22}
+    {
+      \node[rounded corners,DeepBlue!98,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.north east)+(0,-9.5)$) {} ;
+    }
 
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+  \foreach \i in {12}
+    {
+      \node[fill = DeepBlue,rounded corners,draw=DeepBlue,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
+    }
 
-    \shade[rounded corners=12pt, left color=orange!80, right color=orange!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
 
-  \end{scope}
+  \foreach \i in {21,...,6}
+    {
+      \node[DeepBlue!95,rounded corners,draw,regular polygon,regular polygon sides=6, minimum size=\i cm,ultra thick] at ($(current page.south east)+(-0.2,-0.45)$) {} ;
+    }
 
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] at ($(current page.north east)+(0,-9.5)$){{\fontsize{25}{30} \selectfont \bfseries TITLE OF THE REPORT}};
 
-    \shade[rounded corners=28pt, left color=red!80, right color=red!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+  \node[left,DeepBlue!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-11)$){{\huge \textit{Subtitle of the Report}}};
 
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
-
-    \shade[rounded corners=25pt, left color=orange, right color=blue] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
-
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
-
-    \shade[rounded corners=22pt, left color=blue,right color=green] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
-
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
-
-    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
-
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
-
-    \shade[rounded corners=12pt, left color=lightgray] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
-
-  \end{scope}
-
-  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
-
-    \shade[rounded corners=20pt, left color=red, right color=red!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
-
-  \end{scope}
-
-  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf Elektronik 1\\[10pt] Praktikum 1}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2020}};
-
-  \node at ($(current page.center)+(0,-4)$) {{\fontsize{60}{72} \selectfont Passive Bauelemente}};
-
-  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen\\[3pt] Eric Antosch};
+  \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-13)$){{\Large \textsc{Author Name}}};
 
 \end{tikzpicture}
+
 \newpage
 \thispagestyle{empty}
 
@@ -132,7 +117,7 @@
 \end{task}
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.8]{assets/images/Versuch1Schaltplan.PNG}
+
     \caption{Schaltplan zur Bestimmung der Serienimpedanz eines Drahtwiderstands}
   \end{center}
 \end{figure}
@@ -187,7 +172,7 @@ Da unsere Rechnungen auf der Annahme beruhen, dass unsere Bauteile, im Besondere
 erkennen wir eine mögliche Fehlerquelle. Mit dem HP4294A messen wir bei den bestimmten Resonanzfrequenzen die Kapazität aus und erhalten bei $f_{1Res}$ eine Kapazität
 von $C_{f1}=9,53nF$ und bei $f_{2Res}$ eine Kapazität von $C_{f2} = 9,55nF$. Aus den angepassten Werten ergibt sich dann eine Serieninduktivität von $L_S = 3,812\mu F$
 und eine Parallelresonanzfrequenz von $f_{2Res} = 666,922kHZ$. Da allerdings diese Messwerte sich implizit auf den "falschen" Messwerten beruhen, sind hier die Toleranzen aufgrund der
-Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten und deren Bedienung.  
+Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten und deren Bedienung.
 
 
 \newpage
@@ -198,7 +183,7 @@ Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten 
 \end{task}
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=1]{assets/images/Versuch2Schaltplan.PNG}
+
     \caption{Schaltplan zur Bestimmung des Verlustwiderstands einer Induktivität}
   \end{center}
 \end{figure}
@@ -206,7 +191,7 @@ Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten 
   T
   \begin{itemize}
     \item Oszilloskop: Tektronix MDO3012
-    \item Kapazitätsdekade Time Electronics Model 1071 CapBox  
+    \item Kapazitätsdekade Time Electronics Model 1071 CapBox
     \item Funktionsgenerator: Keysight 33210A
     \item Multimeter: MetraHit X-TRA Multimeter
   \end{itemize}
@@ -263,12 +248,12 @@ $U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen 
 \end{center}
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.75]{assets/images/Plot.PNG}
+
     \caption{Der Verlustwiderstand doppelt logarithmisch von der Frequenz abgetragen}
   \end{center}
 \end{figure}
 Aus der Abbildung und den Messwerten folgt nun, dass bei kleinen Frequenzen bis ca. 50kHz die Auswirkungen der Frequenz auf den Verlustwiderstand minimal sind.
-Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die 
+Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die
 Frequenzabhängigkeit eines Widerstandes eindrucksvoll klar. Es ist außerdem anzumerken, dass sich daraus, für die Anwendung in echten Schaltkreisen eine Präferenz für niedrige Frequenzen ergibt,
 wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst gering zu halten.
 \newpage
@@ -280,7 +265,7 @@ wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst geri
 \end{task}
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.8]{assets/images/Versuch3Schaltplan.PNG}
+
     \caption{Schaltplan der Brückenschaltung}
   \end{center}
 \end{figure}
@@ -324,7 +309,7 @@ und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse
     \hline
   \end{tabular}
 \end{center}
-Wir erkennen einen deutlichen Abfall der Kapazität des Becherelkos sowie ihres Serienwiderstandes bei steigender Frequenz. Im 
+Wir erkennen einen deutlichen Abfall der Kapazität des Becherelkos sowie ihres Serienwiderstandes bei steigender Frequenz. Im
 Gegensatz zur Aufgabe 2 ist hier der Einfluss des Skin-Effektes nicht zu verspüren, da hier keine hochfrequenten Signale verwendet werden. Bei der Bestimmung von unbekannten
 passiven Bauelementen ist es also förderlich auch die Frequenz bei der Analyse der Ergebnisse mit einzubeziehen und dann gegebenenfalls auch eine Bezugsfrequenz festzulegen.
 
