@@ -111,11 +111,12 @@
 \newpage
 
 
-\section{Vorbereitung}
+\section*{Vorbereitung}
 
 \section{Resonanz - Eingeschwungener Zustand}
 \begin{task}
-  IIm ersten Versuch soll Peter Schmeter
+  IIm ersten Versuch soll der Amplitudengang von $\hat{u}_C$ in der abgebildeten Schaltung mit dem Oszilloskop ermittelt werden. Dazu soll beachtet werden,
+  dass $R_i = 50\Omega$ und $\hat{u}_{gen} = 1V$ sind. Die Kapazitätsdekade wird mit den berechneten Werten aus der Vorbereitung eingestellt.
 \end{task}
 \begin{figure}[h]
   \begin{center}
@@ -132,35 +133,50 @@
     \item Multimeter: MetraHit X-TRA Multimeter
   \end{itemize}
 \end{devlist}
-\subsection{Vorbereitung}
-\begin{figure}
 
-\end{figure}
-Zunächst wollen wir die gegebenen Formeln so umstellen, dass wir mit ihnen die gesuchten Größen errechnen können.
+\subsection{Bestimmung von $\hat{u}_C$/$\hat{u}_{gen}$}
 
-Für unsere erste Schaltung gilt:
-\begin{equation}
-  f_{1Res} = \frac{1}{2\cdot \pi \cdot \sqrt{L_S \cdot C}}
-\end{equation}
-Durch ein wenig umstellen erhalten wir dann folgende Form, die wir dann quadrieren:
-\begin{align*}
-  \sqrt{L_S\cdot C} & = \frac{1}{2\cdot\pi \cdot f_{1Res}}    \\
-  L_S \cdot C       & = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2}
-\end{align*}
-Wir bringen nun zum Schluss noch $C$ auf die andere Seite und erhalten:
-\begin{equation}\label{eq:LS}
-  L_S = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2\cdot C}
-\end{equation}
-Um nun schlussendlich auch die Parallelresonanzfrequenz zu berechnen, gibt es noch eine entsprechende Formel:
-\begin{equation}\label{eq:f2}
-  f_{2Res} = \frac{\sqrt{1-\frac{R^2}{L_s/C}}}{2\cdot\pi\cdot\sqrt{L_S\cdot C}}
-\end{equation}
-\subsection{Versuchsdurchführung}
-Um die Resonanzfrequenz zu ermitteln, müssen die beiden Spannungen $U_1$ und $U_2$ in Phase sein.
-Dazu variieren wir also am Frequenzgenerator die Frequenz des Eingangssignals $U_1$ so lange, bis sich
-$U_1$ und $U_2$ am Oszilloskop überlagern. An diesem Punkt ist auch $U_2$ minimal.
-Es ist außerdem hilfreich, das Oszilloskop im X-Y-Betrieb laufen zu lassen, damit man die Resonanzfrequenz noch genauer einstellen kann.
-Findet sich nämlich in der Form eine genau gerade und scharfe Linie vor, ist die Resonanzfrequenz erreicht.
+\begin{table}[h]
+  \begin{center}
+
+    \begin{tabular}{|c|c|c|}
+      \hline
+          & $500Hz; C=1,01\mu F$ & $1kHz; C= 253,3 nF$ \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+      -95 &                      &                     \\
+      \hline
+    \end{tabular}
+    \caption{Messwerte für Versuch 1.1}
+    \label{tab:MV}
+  \end{center}
+\end{table}
+
+
+
 
 \subsection{Auswertung}
 
