@@ -1,0 +1,331 @@
+\documentclass{article}
+
+\usepackage{circuitikz} %Für die Schaltpläne
+\usepackage[T1]{fontenc} 
+\usepackage[UTF8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{assets/scripts/tex/color-env}
+\usepackage[ngerman]{babel}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{arrows.meta,topaths}
+    \usetikzlibrary{bending}
+    \usetikzlibrary{calc}
+\title{Elektrotechnik 1 - Praktikum 1}
+
+
+\usepackage[
+  includehead,
+  headheight = 17mm,
+  footskip = \dimexpr\headsep+\ht\strutbox\relax,
+  tmargin = 0mm,
+  bmargin = \dimexpr17mm+2\ht\strutbox\relax,
+]{geometry}
+
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=0.2]{assets/images/haw.jpg}}
+\renewcommand\headrulewidth{0.5pt}
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[overlay,remember picture]
+  \thispagestyle{empty}
+  \fill[black!2] (current page.south west) rectangle (current page.north east);
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+
+    \shade[rounded corners=18pt, left color=green, right color=blue!40] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
+
+    \shade[rounded corners=18pt, left color=lightgray,right color=lightgray!60] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+
+    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+
+    \shade[rounded corners=12pt, left color=orange!80, right color=orange!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+
+    \shade[rounded corners=28pt, left color=red!80, right color=red!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
+
+    \shade[rounded corners=25pt, left color=orange, right color=blue] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
+
+    \shade[rounded corners=22pt, left color=blue,right color=green] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
+
+    \shade[rounded corners=8pt, left color=lightgray] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
+
+    \shade[rounded corners=12pt, left color=lightgray] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
+
+    \shade[rounded corners=20pt, left color=red, right color=red!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
+
+  \end{scope}
+
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf Elektronik 1\\[10pt] Praktikum 1}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2020}};
+
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{60}{72} \selectfont Passive Bauelemente}};
+
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen\\[3pt] Eric Antosch};
+
+\end{tikzpicture}
+\newpage
+\thispagestyle{empty}
+
+\tableofcontents
+
+
+\newpage
+
+\section{Serieninduktivität eines Drahtwiderstands}
+\begin{task}
+  IIm ersten Versuch soll die Serieninduktivität eines Drahtwiderstands erst über Messung der Serienresonanzfrequenz bei
+  gegebenem Kondensator berechnet werden. Im Anschluss wird dann das Ergebnis genutzt, um das Verhalten der Schaltung bei Parallelresonanzfrequenz zu untersuchen.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.8]{assets/images/Versuch1Schaltplan.PNG}
+    \caption{Schaltplan zur Bestimmung der Serienimpedanz eines Drahtwiderstands}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Oszilloskop: Tektronix MDO3012
+    \item Funktionsgenerator: Keysight 33210A
+    \item HP 4294A Impedance Analyzer
+    \item Multimeter: MetraHit X-TRA Multimeter
+  \end{itemize}
+\end{devlist}
+\subsection{Vorbereitung}
+\begin{figure}
+
+\end{figure}
+Zunächst wollen wir die gegebenen Formeln so umstellen, dass wir mit ihnen die gesuchten Größen errechnen können.
+
+Für unsere erste Schaltung gilt:
+\begin{equation}
+  f_{1Res} = \frac{1}{2\cdot \pi \cdot \sqrt{L_S \cdot C}}
+\end{equation}
+Durch ein wenig umstellen erhalten wir dann folgende Form, die wir dann quadrieren:
+\begin{align*}
+  \sqrt{L_S\cdot C} & = \frac{1}{2\cdot\pi \cdot f_{1Res}}    \\
+  L_S \cdot C       & = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2}
+\end{align*}
+Wir bringen nun zum Schluss noch $C$ auf die andere Seite und erhalten:
+\begin{equation}\label{eq:LS}
+  L_S = \frac{1}{4\cdot\pi^2\cdot f_{1Res}^2\cdot C}
+\end{equation}
+Um nun schlussendlich auch die Parallelresonanzfrequenz zu berechnen, gibt es noch eine entsprechende Formel:
+\begin{equation}\label{eq:f2}
+  f_{2Res} = \frac{\sqrt{1-\frac{R^2}{L_s/C}}}{2\cdot\pi\cdot\sqrt{L_S\cdot C}}
+\end{equation}
+\subsection{Versuchsdurchführung}
+Um die Resonanzfrequenz zu ermitteln, müssen die beiden Spannungen $U_1$ und $U_2$ in Phase sein.
+Dazu variieren wir also am Frequenzgenerator die Frequenz des Eingangssignals $U_1$ so lange, bis sich
+$U_1$ und $U_2$ am Oszilloskop überlagern. An diesem Punkt ist auch $U_2$ minimal.
+Es ist außerdem hilfreich, das Oszilloskop im X-Y-Betrieb laufen zu lassen, damit man die Resonanzfrequenz noch genauer einstellen kann.
+Findet sich nämlich in der Form eine genau gerade und scharfe Linie vor, ist die Resonanzfrequenz erreicht.
+
+\subsection{Auswertung}
+
+Unsere abgelesene Resonanzfrequenz liegt nun also bei: $f_{1Res} = 835kHz$.
+Aus dieser können wir mit (\ref{eq:LS}) die gesuchte Serieninduktivität des Drahtwiderstands berechnen: $L_S = 3,633\mu H$\\[3pt]
+Um nun die Serienresonanzfrequenz mit der Parallelresonanzfrequenz zu vergleichen, setzen wir unsere errechnete Induktivität in
+(\ref{eq:f2}) ein und erhalten dadurch: $f_{2Res} = 648,745kHz$. Wir testen nun mit dem Oszilloskop diese berechnete Resonanzfrequenz, indem wir
+die beiden Signale wieder in Phase bringen, wobei wir $f_{2Res} = 652kHz$ ablesen.
+
+Da unsere Rechnungen auf der Annahme beruhen, dass unsere Bauteile, im Besonderen der Kondensator, bei jeder Frequenz die gleichen Kenngrößen haben,
+erkennen wir eine mögliche Fehlerquelle. Mit dem HP4294A messen wir bei den bestimmten Resonanzfrequenzen die Kapazität aus und erhalten bei $f_{1Res}$ eine Kapazität
+von $C_{f1}=9,53nF$ und bei $f_{2Res}$ eine Kapazität von $C_{f2} = 9,55nF$. Aus den angepassten Werten ergibt sich dann eine Serieninduktivität von $L_S = 3,812\mu F$
+und eine Parallelresonanzfrequenz von $f_{2Res} = 666,922kHZ$. Da allerdings diese Messwerte sich implizit auf den "falschen" Messwerten beruhen, sind hier die Toleranzen aufgrund der
+Fehlerfortpflanzung größer. Dazu kommen noch Ungenauigkeiten bei den Geräten und deren Bedienung.  
+
+
+\newpage
+\section{Verlustwiderstand einer Induktivität}
+\begin{task}
+  IIm zweiten Versuch soll durch das Ermitteln des Verlustwiderstands in Abhängigkeit von der Frequenz der Einfluss selbiger auf das Verhalten des Verlustwiderstands erarbeitet werden.
+  Gleichzeitig ist das Einstellen einer Kapazitätsdekade auf Resonanzfrequenz mit der Induktivität Gegenstand der Aufgabe.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=1]{assets/images/Versuch2Schaltplan.PNG}
+    \caption{Schaltplan zur Bestimmung des Verlustwiderstands einer Induktivität}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Oszilloskop: Tektronix MDO3012
+    \item Kapazitätsdekade Time Electronics Model 1071 CapBox  
+    \item Funktionsgenerator: Keysight 33210A
+    \item Multimeter: MetraHit X-TRA Multimeter
+  \end{itemize}
+\end{devlist}
+\subsection{Vorbereitung}
+
+Wir wollen zuerst einmal aus den bereits erarbeiten Formeln die Berechnung der Kapazitätsdekade herleiten:
+\begin{equation}
+  C = \frac{1}{4\cdot\pi^2\cdot f_{Res}^2 \cdot L}
+\end{equation}
+Aus der Annahme, dass sich bei eingestellter Resonanzfrequenz die Impedanzen der Spule und der Kapazitätsdekade aufheben, können wir die Formel
+für die Berechnung des Verlustwiderstands $R_v$ aus dem Spannungsteiler herleiten:
+\begin{align*}
+  U_2                           & = U_1 \cdot \frac{R_v}{R_v+R}                \\
+  \left(R_v + R\right)\cdot U_2 & = U_1 \cdot R_v                              \\
+  R_v + R                       & = \frac{U_1}{U_2} \cdot R_v                  \\
+  R                             & = \left(\frac{U_1}{U_2} - 1\right) \cdot R_v \\
+\end{align*}
+Nun teilen wir noch durch $\frac{U_1}{U_2} - 1$ und bekommen:
+\begin{equation}
+  \frac{R}{\left(\frac{U_1}{U_2} - 1\right)}  = R_v
+\end{equation}
+
+Wir messen mit dem MetraHit vorher noch den Gleichstromwiderstand der Spule, um den später bei der Messung zu berücksichtigen.
+Dieser beträgt $R_{Cu} = 38,8\Omega$.
+
+\subsection{Versuchsdurchführung}
+
+Wir stellen die Kapazitätsdekade so ein, dass wir bei den Frequenzen $f = 1,2,5,10,20,50,100kHz$ jeweils die Resonanzfrequenz bekommen und Messen dann
+$U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen diese Werte dann in einem Plot ab.
+
+\subsection{Auswertung}
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $\frac{f}{kHz}$ & $\frac{C_{Rechnung}}{\mu F}$ & $\frac{C_{Messung}}{\mu F}$ & $\frac{U_1}{mV}$ & $\frac{U_2}{mV}$ & $\frac{R_v}{\Omega}$ \\
+    \hline
+    1               & $1,151377$                   & $1,13019$                   & $952$            & $37,11$          & $40,56$              \\
+    \hline
+    2               & $0,287$                      & $0,282$                     & $953$            & $37,5$           & $40,96$              \\
+    \hline
+    5               & $0,046055$                   & $0,04556$                   & $956,1$          & $40,02$          & $43,69$              \\
+    \hline
+    10              & $0,0151$                     & $0,0113$                    & $952,1$          & $30,93$          & $33,576$             \\
+    \hline
+    20              & $0,002878$                   & $0,00278$                   & $955$            & $36,1$           & $39,286$             \\
+    \hline
+    50              & $460pF$                      & $370pF$                     & $959$            & $79$             & $89,772$             \\
+    \hline
+    100             & $151pF$                      & $30pF$                      & $972$            & $405$            & $714,28$             \\
+    \hline
+  \end{tabular}
+\end{center}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.75]{assets/images/Plot.PNG}
+    \caption{Der Verlustwiderstand doppelt logarithmisch von der Frequenz abgetragen}
+  \end{center}
+\end{figure}
+Aus der Abbildung und den Messwerten folgt nun, dass bei kleinen Frequenzen bis ca. 50kHz die Auswirkungen der Frequenz auf den Verlustwiderstand minimal sind.
+Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die 
+Frequenzabhängigkeit eines Widerstandes eindrucksvoll klar. Es ist außerdem anzumerken, dass sich daraus, für die Anwendung in echten Schaltkreisen eine Präferenz für niedrige Frequenzen ergibt,
+wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst gering zu halten.
+\newpage
+
+\section{Serienverlustwiderstand eines Becherelkos}
+\begin{task}
+  IIm dritten und letzten Versuch soll nun der Serienverlustwiderstand eines RC-Glieds in einer Brückenschaltung gemessen und errechnet werden.
+  Dazu soll das Variieren einer Widerstands- und Kapazitätsdekade zum Abgleich einer einfachen Brückenschaltung als Methode der Messung geübt werden.
+\end{task}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.8]{assets/images/Versuch3Schaltplan.PNG}
+    \caption{Schaltplan der Brückenschaltung}
+  \end{center}
+\end{figure}
+\begin{devlist}
+  T
+  \begin{itemize}
+    \item Transformator Sennheiser RVZ11
+    \item Oszilloskop: Tektronix MDO3012
+    \item Kapazitätsdekade: Time Electronics Model 1071 CapBox
+    \item Widerstandsdekade: Time Electronics Model 1051 ResBox
+    \item Funktionsgenerator: Keysight 33210A
+  \end{itemize}
+\end{devlist}
+\subsection{Vorbereitung}
+Unter der Vorraussetzung, dass die Variation des einstellbaren RC-Glieds ein Abgleich der Brückenschaltung hervorruft, gilt:
+\begin{align*}
+  \frac{C_N}{C_X} & = \frac{R_1}{R_2} \\
+  \frac{R_N}{R_X} & = \frac{R_2}{R_1} \\
+\end{align*}
+Aus diesen Vorraussetzungen folgt dann:
+\begin{align}
+  \frac{C_N\cdot R_2}{R_1} & = C_X\label{eq:CX} \\
+  \frac{R_N\cdot R_1}{R_2} & = R_X\label{eq:RX}
+\end{align}
+\subsection{Versuchsdurchführung}
+Wir stellen am Funktionsgenerator jeweils die Frequenzen $f= 100Hz, 500Hz\text{ und }1kHz$ ein und ermitteln die Kapazität $C_X$ und den Verlustwiderstand $R_X$
+und tragen dann die Werte in eine Tabelle ab. Im Anschluss werden die Ergebnisse dann mit dem HP 4294A Impedance Analyzer überprüft.
+
+\subsection{Auswertung}
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $\frac{f}{Hz}$ & $\frac{C_X}{nF}$ & $\frac{R_X}{\Omega}$ & $\frac{U_{Br}}{\mu V}$ \\
+    \hline
+    100            & $1000$           & $81$                 & $4,2$                  \\
+    \hline
+    500            & $988$            & $21$                 & $6,4$                  \\
+    \hline
+    1000           & $898$            & $20$                 & $4,2$                  \\
+    \hline
+  \end{tabular}
+\end{center}
+Wir erkennen einen deutlichen Abfall der Kapazität des Becherelkos sowie ihres Serienwiderstandes bei steigender Frequenz. Im 
+Gegensatz zur Aufgabe 2 ist hier der Einfluss des Skin-Effektes nicht zu verspüren, da hier keine hochfrequenten Signale verwendet werden. Bei der Bestimmung von unbekannten
+passiven Bauelementen ist es also förderlich auch die Frequenz bei der Analyse der Ergebnisse mit einzubeziehen und dann gegebenenfalls auch eine Bezugsfrequenz festzulegen.
+
+\end{document}
