@@ -324,15 +324,11 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
 \newpage
 \section{Resonanz - Schaltverhalten}
 \begin{task}
-  IIm zweiten Versuch soll durch das Ermitteln des Verlustwiderstands in Abhängigkeit von der Frequenz der Einfluss selbiger auf das Verhalten des Verlustwiderstands erarbeitet werden.
-  Gleichzeitig ist das Einstellen einer Kapazitätsdekade auf Resonanzfrequenz mit der Induktivität Gegenstand der Aufgabe.
+  IIn diesem Versuch wird wieder die Schaltung aus 1.1 aufgebaut. Für die Messungen wird zwischen dem Generator und der Spule/C-Dekade eine Präzisions-Widerstandsdekade verschaltet.
+  Die Kreisresonanz wird mit der C-Dekade auf f = 1kHz eingestellt. An die Schaltung wird eine symmetrische Rechteckspannung mit einer Frequenz f = 50Hz, Tastverhältnis a = 0,5 und einem Scheitelwert von $\hat{u}_{gen} = 1,0 V$ angelegt.
+  Der zeitliche Verlauf der Spannung am Kondensator wird mittels Oszilloskop dargestellt
 \end{task}
-\begin{figure}[h]
-  \begin{center}
 
-    \caption{Schaltplan zur Bestimmung des Verlustwiderstands einer Induktivität}
-  \end{center}
-\end{figure}
 \begin{devlist}
   T
   \begin{itemize}
@@ -342,64 +338,36 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
     \item Multimeter: MetraHit X-TRA Multimeter
   \end{itemize}
 \end{devlist}
-\subsection{Vorbereitung}
 
-Wir wollen zuerst einmal aus den bereits erarbeiten Formeln die Berechnung der Kapazitätsdekade herleiten:
-\begin{equation}
-  C = \frac{1}{4\cdot\pi^2\cdot f_{Res}^2 \cdot L}
-\end{equation}
-Aus der Annahme, dass sich bei eingestellter Resonanzfrequenz die Impedanzen der Spule und der Kapazitätsdekade aufheben, können wir die Formel
-für die Berechnung des Verlustwiderstands $R_v$ aus dem Spannungsteiler herleiten:
-\begin{align*}
-  U_2                           & = U_1 \cdot \frac{R_v}{R_v+R}                \\
-  \left(R_v + R\right)\cdot U_2 & = U_1 \cdot R_v                              \\
-  R_v + R                       & = \frac{U_1}{U_2} \cdot R_v                  \\
-  R                             & = \left(\frac{U_1}{U_2} - 1\right) \cdot R_v \\
-\end{align*}
-Nun teilen wir noch durch $\frac{U_1}{U_2} - 1$ und bekommen:
-\begin{equation}
-  \frac{R}{\left(\frac{U_1}{U_2} - 1\right)}  = R_v
-\end{equation}
+\subsection{Serienschwingkreis mit Dämpfung}
 
-Wir messen mit dem MetraHit vorher noch den Gleichstromwiderstand der Spule, um den später bei der Messung zu berücksichtigen.
-Dieser beträgt $R_{Cu} = 38,8\Omega$.
+Abbildung gedämpfter Schwingkreis\\\\
 
-\subsection{Versuchsdurchführung}
-
-Wir stellen die Kapazitätsdekade so ein, dass wir bei den Frequenzen $f = 1,2,5,10,20,50,100kHz$ jeweils die Resonanzfrequenz bekommen und Messen dann
-$U_1$ und $U_2$ mit dem Oszilloskop. Daraus errechnen wir dann $R_v$ und tragen diese Werte dann in einem Plot ab.
-
-\subsection{Auswertung}
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|c|}
-    \hline
-    $\frac{f}{kHz}$ & $\frac{C_{Rechnung}}{\mu F}$ & $\frac{C_{Messung}}{\mu F}$ & $\frac{U_1}{mV}$ & $\frac{U_2}{mV}$ & $\frac{R_v}{\Omega}$ \\
-    \hline
-    1               & $1,151377$                   & $1,13019$                   & $952$            & $37,11$          & $40,56$              \\
-    \hline
-    2               & $0,287$                      & $0,282$                     & $953$            & $37,5$           & $40,96$              \\
-    \hline
-    5               & $0,046055$                   & $0,04556$                   & $956,1$          & $40,02$          & $43,69$              \\
-    \hline
-    10              & $0,0151$                     & $0,0113$                    & $952,1$          & $30,93$          & $33,576$             \\
-    \hline
-    20              & $0,002878$                   & $0,00278$                   & $955$            & $36,1$           & $39,286$             \\
-    \hline
-    50              & $460pF$                      & $370pF$                     & $959$            & $79$             & $89,772$             \\
-    \hline
-    100             & $151pF$                      & $30pF$                      & $972$            & $405$            & $714,28$             \\
-    \hline
-  \end{tabular}
-\end{center}
-\begin{figure}[h]
+Messwerte:
+\begin{table}[h]
   \begin{center}
 
-    \caption{Der Verlustwiderstand doppelt logarithmisch von der Frequenz abgetragen}
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+        $T_d$ &$\overline{u}$ & $y_i$  & $y_{i+1}$\\
+      \hline
+             ca 1ms&    ca -1v&   ca860mV  &    ca340mV    \\         
+      \hline
+    \end{tabular}
   \end{center}
-\end{figure}
-Aus der Abbildung und den Messwerten folgt nun, dass bei kleinen Frequenzen bis ca. 50kHz die Auswirkungen der Frequenz auf den Verlustwiderstand minimal sind.
-Der Verlustwiderstand wird zu einem großen Teil durch den Gleichstromwiderstand $C_{Cu}$ bestimmt. Ab dieser Marke setzt dann der Skin-Effekt ein; hier wird auch die
-Frequenzabhängigkeit eines Widerstandes eindrucksvoll klar. Es ist außerdem anzumerken, dass sich daraus, für die Anwendung in echten Schaltkreisen eine Präferenz für niedrige Frequenzen ergibt,
-wenn man zum Ziel hat, den Verlustwiderstand einer Induktivität möglichst gering zu halten.
+\end{table}
+Berechnung des Dämpfungsmaß:
+\begin{align*}
+  \delta &= \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right)\\
+  \omega &= 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = hier muss ca das gleiche wie unten rauskommen \\
+  \omega_r &= \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{100mH \cdot 253,3nF}} = 6283 s^{-1}
+\end{align*}
+
+
+\subsection{Aperiodischer Grenzfall}
+
+Abbildung Aperiodischer Grenzfall
+
+Wert liegt circa bei 1,0753k Ohm
+
 \end{document}
