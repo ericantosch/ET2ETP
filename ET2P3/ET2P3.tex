@@ -112,7 +112,66 @@
 
 
 \section{Vorbereitung}
+Als Vorbereitung der folgenden Versuche werden vorher einige Kenngrößen eines Serienresonanzkreies berechnet.
+Die Serienschaltung besteht dabei aus einer Induktivität L = 100 mH und einem Gleichstrom-Drahtwiderstand $R_L = 10 \Omega$ . Der Sinus-Generator
+hat einen Innenwiderstand von $R_i = 50\Omega$. Die angegebene Größe der Induktivität gilt nur für Frequenzen f < 1kHz.
 
+\subsection{Berechnung der erforderlichen Kapazität}
+Die Formel zur Berechnung der Resonanzfrequenz wird nach der Kapazität C umgestellt.
+\begin{align*}
+  \omega_r &= \frac{1}{\sqrt{LC}}\\
+  C &= \frac{1}{{w_r}^2L}
+\end{align*}
+Mit der Formel werden nun die Kapazitäten verschiedener Frequenzen ausgerechnet:
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|c|}    
+    \hline
+    Freqeunz               & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
+    \hline
+    Kapazität              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+\subsection{Berechnung der Gütefaktoren und Bandbreiten}
+Nun werden die zugehörigen Gütefaktoren Q und Bandbreiten $\Delta$f für jeweils den Gesamtverlustwiderstand R$_i$ + R$_L$ und den Spulen-Drahtwiderstand R$_L$ allein berechnet.
+Für den Gesamtverlustwiderstand gilt:
+\begin{align*}
+  R_{ges} &= R_i + R_L= 50\Omega + 10\Omega = 60\Omega
+\end{align*}
+Die Formel der Güte einer Serienschaltung lautet:
+\begin{align*}
+  Q &= \frac{1}{R}\cdot\sqrt{\frac{L}{C}}
+\end{align*}
+Für die Bandbreite $\Delta$f ermittelt sich aus:
+\begin{align*}
+  B &= \frac{f_r}{Q}
+\end{align*}
+Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
+
+\begin{center}
+
+  \begin{tabular}{|c|c|c|c|c|c|}    
+    \hline
+    Freqeunz               & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
+    \hline
+    $Q_{R_{ges}}$              & $25,33\mu F$               & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
+    \hline
+    $Q_L$              & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
+    \hline
+    $\Delta f_{R_{ges}}$              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
+    \hline
+    $\Delta f_L$              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $1,013nF$           & $2,53nF$              \\
+    \hline
+  \end{tabular}
+
+\end{center}
+
+
+
+\newpage
 \section{Resonanz - Eingeschwungener Zustand}
 \begin{task}
   IIm ersten Versuch soll Peter Schmeter
