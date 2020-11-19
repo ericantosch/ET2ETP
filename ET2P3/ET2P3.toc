@@ -3,8 +3,15 @@
 \contentsline {subsection}{\numberline {1.1}Berechnung der erforderlichen Kapazität}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Berechnung der Gütefaktoren und Bandbreiten}{3}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Resonanz - Eingeschwungener Zustand}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Bestimmung von $\hat {u}_C$/$\hat {u}_{gen}$}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Auswertung}{4}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Resonanz - Schaltverhalten}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Serienschwingkreis mit Dämpfung}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {2.1}Versuch 1}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Bestimmung von $\frac {\hat {u}_C}{\hat {u}_{gen}}$}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Graphische Darstellung der Ergebnisse}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Ermittlung der Güte und der Bandbreite}{5}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Versuch 2}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Graphische Darstellung}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Berechnung der Güte und der Bandbreite}{7}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Vergleich}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Versuch mit höheren Resonanzfrequenzen}{7}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Resonanz - Schaltverhalten}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Serienschwingkreis mit Dämpfung}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{8}{subsection.3.2}%
