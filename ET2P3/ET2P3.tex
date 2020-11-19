@@ -123,17 +123,17 @@ Die Formel zur Berechnung der Resonanzfrequenz wird nach der Kapazität C umgest
   C        & = \frac{1}{{w_r}^2L}
 \end{align*}
 Mit der Formel werden nun die Kapazitäten verschiedener Frequenzen ausgerechnet:
-\begin{table}
-\begin{center}
-  \begin{tabular}{|c|c|c|c|c|c|}    
-    \hline
-    Freqeunz               & $100 Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
-    \hline
-    Kapazität              & $25,33\mu F$                      & $1,013\mu F$                     & $253,3nF$            & $10,13nF$           & $2,53nF$              \\
-    \hline
-  \end{tabular}
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      Frequenz  & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      \hline
+      Kapazität & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $10,13nF$ & $2,53nF$ \\
+      \hline
+    \end{tabular}
 
-\end{center}
+  \end{center}
 \end{table}
 
 \subsection{Berechnung der Gütefaktoren und Bandbreiten}
@@ -153,39 +153,26 @@ Für die Bandbreite $\Delta$f ermittelt sich aus:
 Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
 \begin{table}[h]
 
-\begin{center}
-
-  \begin{tabular}{|c|c|c|c|c|c|}    
-    \hline
-    Freqeunz               & $100Hz$                   & $500Hz$                   & $1kHz$            & $5kHz$          & $10kHz$              \\
-    \hline
-    $Q_{R_{ges}}$              & $1,05$               & $5,24$                     & $10,47$            & $52,37$           & $104,78$              \\
-    \hline
-    $Q_L$              & $6,28$                   & $31,42$                   & $62,83$            & $316,02$          & $628,7$              \\
-    \hline
-    $\Delta f_{R_{ges}}$              & $95,24$                      & $95,42$                     & $95,51$            & $95,47$           & $95,44$              \\
-    \hline
-    $\Delta f_L$              & $15,92$                      & $15,91$                     & $15,92$            & $15,82$           & $15,91$              \\
-    \hline
-  \end{tabular}
+  \begin{center}
 
     \begin{tabular}{|c|c|c|c|c|c|}
       \hline
-      Freqeunz             & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      Frequenz             & $100Hz$ & $500Hz$ & $1kHz$  & $5kHz$   & $10kHz$  \\
       \hline
-      $Q_{R_{ges}}$        & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      $Q_{R_{ges}}$        & $1,05$  & $5,24$  & $10,47$ & $52,37$  & $104,78$ \\
       \hline
-      $Q_L$                & $100 Hz$     & $500Hz$      & $1kHz$    & $5kHz$    & $10kHz$  \\
+      $Q_L$                & $6,28$  & $31,42$ & $62,83$ & $316,02$ & $628,7$  \\
       \hline
-      $\Delta f_{R_{ges}}$ & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      $\Delta f_{R_{ges}}$ & $95,24$ & $95,42$ & $95,51$ & $95,47$  & $95,44$  \\
       \hline
-      $\Delta f_L$         & $25,33\mu F$ & $1,013\mu F$ & $253,3nF$ & $1,013nF$ & $2,53nF$ \\
+      $\Delta f_L$         & $15,92$ & $15,91$ & $15,92$ & $15,82$  & $15,91$  \\
       \hline
     \end{tabular}
     \caption{Güte und Bandbreite in Abhängigkeit von dem betrachtetem Widerstand und der Frequenz}
     \label{tab:cGB}
   \end{center}
 \end{table}
+s
 
 
 
@@ -226,31 +213,31 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
       \hline
       $\Delta$f & $f_r = 500Hz, C=1,01\mu F$ & $f_r = 1kHz, C= 253,3 nF$ \\
       \hline
-      -95       & 2,64V                & 5,2V                \\
+      -95       & 2,64V                      & 5,2V                      \\
       \hline
-      -50       & 4V                   & 8V                  \\
+      -50       & 4V                         & 8V                        \\
       \hline
-      -40       & 4,4V                 & 8,8V                \\
+      -40       & 4,4V                       & 8,8V                      \\
       \hline
-      -20       & 5,04V                & 10V                 \\
+      -20       & 5,04V                      & 10V                       \\
       \hline
-      -10       & 5,12V                & 10,2V               \\
+      -10       & 5,12V                      & 10,2V                     \\
       \hline
-      -5        & 5,12V                & 10,2V               \\
+      -5        & 5,12V                      & 10,2V                     \\
       \hline
-      0         & 5,04V                & 10V                 \\
+      0         & 5,04V                      & 10V                       \\
       \hline
-      5         & 5,12V                & 9,6V                \\
+      5         & 5,12V                      & 9,6V                      \\
       \hline
-      10        & 4,8V                 & 9,4V                \\
+      10        & 4,8V                       & 9,4V                      \\
       \hline
-      20        & 4,4V                 & 8,6V                \\
+      20        & 4,4V                       & 8,6V                      \\
       \hline
-      40        & 3,6V                 & 7V                  \\
+      40        & 3,6V                       & 7V                        \\
       \hline
-      50        & 3,2V                 & 6,4V                \\
+      50        & 3,2V                       & 6,4V                      \\
       \hline
-      95        & 2V                   & 4,2V                \\
+      95        & 2V                         & 4,2V                      \\
       \hline
     \end{tabular}
     \caption{Messwerte für Versuch 1.1}
@@ -259,7 +246,7 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
 \end{table}
 
 Wir erkennen anhand der Messwerte eine kleine Verschiebung des erwarteten Werts der Resonanzfrequenz. Für sowohl 500Hz als auch für 10kHz
-ergibt sich eine neue Resonanzfrequenz von 495Hz bzw. 995Hz, ein Unterschied von $\Delta f = -5Hz$. Diese Erkenntnisse lassen sich zum einen 
+ergibt sich eine neue Resonanzfrequenz von 495Hz bzw. 995Hz, ein Unterschied von $\Delta f = -5Hz$. Diese Erkenntnisse lassen sich zum einen
 mit dem Innenwiderstand $R_i = 50\Omega$ und den Leiterwiderständen der verwendeten Messleitungen erklären, die eine Dämpfung in das System integrieren.
 Aus diesem Grund gleichen wir diesen Umstand im nächsten Versuch mit einem Operationsverstärker-Impedanzwandler aus. Auf den folgenden Abbildungen wird der Effekt auch
 optisch sehr deutlich.
@@ -289,11 +276,11 @@ optisch sehr deutlich.
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      Resonanzfrequenz & 495Hz & 995Hz \\
+      Resonanzfrequenz & 495Hz  & 995Hz  \\
       \hline
-      Q                &  5,23     &  10,47     \\
+      Q                & 5,23   & 10,47  \\
       \hline
-      $\Delta$f        &  94,646     &  95,033     \\
+      $\Delta$f        & 94,646 & 95,033 \\
       \hline
     \end{tabular}
     \caption{Aus den Messwerten berechnete Güte und Bandbreite}
@@ -315,43 +302,43 @@ optisch sehr deutlich.
     \includegraphics{../assets/images/ETP3/Versuch2Schaltplan.PNG}
     \caption{Schaltplan für den zweiten Versuch mit Operationsverstärker-Impedanzwandler}
   \end{center}
-\end{figure}
-\subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
+  \end{figure}
+  \subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
 ugen = 0,3Vpp
 \begin{table}[h]
   \begin{center}
 
     \begin{tabular}{|c|c|c|c|c|}
       \hline
-          & \multicolumn{2}{c|}{$f_r = 500Hz, C = 1,01\mu F$} & \multicolumn{2}{c|}{$f_r = 1kHz, C= 253,3 nF$}                                                   \\
+                 & \multicolumn{2}{c|}{$f_r = 500Hz, C = 1,01\mu F$} & \multicolumn{2}{c|}{$f_r = 1kHz, C= 253,3 nF$}                                                   \\
       \hline
-      $\Delta f$    & $\hat{u}_C$                               & $\frac{\hat{u}_C}{\hat{u}_{gen}}$        & $\hat{u}_C$ & $\frac{\hat{u}_C}{\hat{u}_{gen}}$ \\
+      $\Delta f$ & $\hat{u}_C$                                       & $\frac{\hat{u}_C}{\hat{u}_{gen}}$              & $\hat{u}_C$ & $\frac{\hat{u}_C}{\hat{u}_{gen}}$ \\
       \hline
-      -95 & 0,56V                                     &     1,86                                     & 0,96V       &                                   \\
+      -95        & 0,56V                                             & 1,86                                           & 0,96V       & 3,2                               \\
       \hline
-      -50 & 0,88V                                     &     2,93                                     & 1,6V        &                                   \\
+      -50        & 0,88V                                             & 2,93                                           & 1,6V        & 5,3                               \\
       \hline
-      -40 & 1,04V                                     &      3,46                                    & 2,08V       &                                   \\
+      -40        & 1,04V                                             & 3,46                                           & 2,08V       & 6,93                              \\
       \hline
-      -20 & 1,68V                                     &     5,6                                     & 4,72V       &                                   \\
+      -20        & 1,68V                                             & 5,6                                            & 4,72V       & 15,73                             \\
       \hline
-      -10 & 2,96V                                     &    9,86                                      & 7,84V       &                                   \\
+      -10        & 2,96V                                             & 9,86                                           & 7,84V       & 26,13                             \\
       \hline
-      -5  & 4V                                        &    13,3                                      & 7,68V       &                                   \\
+      -5         & 4V                                                & 13,3                                           & 7,68V       & 25,6                              \\
       \hline
-      0   & 4,24V                                     &                                          & 6,24V       &                                   \\
+      0          & 4,24V                                             & 14,13                                          & 6,24V       & 20,8                              \\
       \hline
-      5   & 3,6V                                      &                                          & 4,88V       &                                   \\
+      5          & 3,6V                                              & 12                                             & 4,88V       & 16,26                             \\
       \hline
-      10  & 2,8V                                      &                                          & 3,84V       &                                   \\
+      10         & 2,8V                                              & 9,3                                            & 3,84V       & 12,8                              \\
       \hline
-      20  & 1,6V                                      &                                          & 2,56V       &                                   \\
+      20         & 1,6V                                              & 5,3                                            & 2,56V       & 8,53                              \\
       \hline
-      40  & 1,04V                                     &                                          & 1,52V       &                                   \\
+      40         & 1,04V                                             & 3,46                                           & 1,52V       & 5,06                              \\
       \hline
-      50  & 0,64V                                     &                                          & 1,2V        &                                   \\
+      50         & 0,64V                                             & 2,13                                           & 1,2V        & 4                                 \\
       \hline
-      95  & 0,48V                                     &                                          & 0,64V       &                                   \\
+      95         & 0,48V                                             & 1,6                                            & 0,64V       & 2,13                              \\
       \hline
     \end{tabular}
     \caption{Messwerte für Versuch 2}
@@ -360,6 +347,20 @@ ugen = 0,3Vpp
 \end{table}
 
 \subsubsection{Graphische Darstellung}
+\begin{figure}
+  \begin{center}
+    \includegraphics{../assets/images/ETP3/Fre500Plot3.PNG}
+    \caption{Spannungsverhältnis abgetragen gegen die Frequenz mit Impedanzwandler ($f_r = 500Hz$)}
+  \end{center}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{../assets/images/ETP3/Fre990Plot5.PNG}
+    \caption{}
+  \end{center}
+\end{figure}
+
 
 \subsubsection{Berechnung der Güte und der Bandbreite}
 
@@ -381,7 +382,7 @@ ugen = 0,3Vpp
 
 \subsection{Vergleich}
 
-Es wird ein sehr deutliche Bild erkenntlich, indem der Ausgleich des dämpfenden Innenwiderstands der 
+Es wird ein sehr deutliche Bild erkenntlich, indem der Ausgleich des dämpfenden Innenwiderstands der
 Spannungsquelle ein deutlicheres Ergebnis im Bezug auf die Resonanzfrequenz und den entsprechenden Spannungsverhältnissen zulässt.
 Es ist jedoch zu bemerken, dass ein solcher Operationsverstärker das Äquivalent
 
@@ -447,7 +448,7 @@ Messwerte:
 \end{table}
 Berechnung des Dämpfungsmaß:
 \begin{align*}
-  \delta   & = \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right) = 200,67            \\
+  \delta   & = \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right) = 200,67      \\
   \omega   & = 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = 6,283kHz                     \\
   \omega_r & = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{100mH \cdot 253,3nF}} = 6,283 kHz
 \end{align*}
