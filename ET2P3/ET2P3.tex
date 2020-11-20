@@ -245,11 +245,6 @@ Für verschiedene Frequenzen ergeben sich dann folgende Güten und Bandbreiten:
   \end{center}
 \end{table}
 
-Wir erkennen anhand der Messwerte eine kleine Verschiebung des erwarteten Werts der Resonanzfrequenz. Für sowohl 500Hz als auch für 10kHz
-ergibt sich eine neue Resonanzfrequenz von 495Hz bzw. 995Hz, ein Unterschied von $\Delta f = -5Hz$. Diese Erkenntnisse lassen sich zum einen
-mit dem Innenwiderstand $R_i = 50\Omega$ und den Leiterwiderständen der verwendeten Messleitungen erklären, die eine Dämpfung in das System integrieren.
-Aus diesem Grund gleichen wir diesen Umstand im nächsten Versuch mit einem Operationsverstärker-Impedanzwandler aus. Auf den folgenden Abbildungen wird der Effekt auch
-optisch sehr deutlich.
 
 \newpage
 
@@ -268,25 +263,36 @@ optisch sehr deutlich.
   \end{center}
 \end{figure}
 
+Wir erkennen anhand der Messwerte eine kleine Verschiebung des erwarteten Werts der Resonanzfrequenz. Für sowohl 500Hz als auch für 10kHz
+ergibt sich eine neue Resonanzfrequenz von 495Hz bzw. 995Hz, ein Unterschied von $\Delta f = -5Hz$. Diese Erkenntnisse lassen sich zum einen
+mit dem Innenwiderstand $R_i = 50\Omega$ und den Leiterwiderständen der verwendeten Messleitungen erklären, die eine Dämpfung in das System integrieren.
+Aus diesem Grund gleichen wir diesen Umstand im nächsten Versuch mit einem Operationsverstärker-Impedanzwandler aus. Auf den Abbildungen wird der Effekt auch
+optisch sehr deutlich.
 \newpage
 
 \subsubsection{Ermittlung der Güte und der Bandbreite}
+
+Wir berechnen die Bandbreite $\Delta$f über die Formel aus der Vorbereitung, wobei wir hier
+Q über $\frac{\hat{u}_C}{\hat{u}_{gen}}$ berechnen.
 
 \begin{table}[h]
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      Resonanzfrequenz & 495Hz  & 995Hz  \\
+      Resonanzfrequenz & 495Hz   & 995Hz  \\
       \hline
-      Q                & 5,23   & 10,47  \\
+      Q                & 5,12    & 10,2   \\
       \hline
-      $\Delta$f        & 94,646 & 95,033 \\
+      $\Delta$f        & 96,6797 & 97,549 \\
       \hline
     \end{tabular}
     \caption{Aus den Messwerten berechnete Güte und Bandbreite}
     \label{tab:eMGB}
   \end{center}
 \end{table}
+
+Wir erkennen, dass die Güte und die Bandbreite der Versuch ermittelten Resonanzfrequenz den vorrausberechneten Resonanzfrequenzen
+stark ähneln, da wir auch nur eine leichte Abweichung von der angenommenen Resonanzfrequenz erreicht haben.
 
 \newpage
 
@@ -296,15 +302,18 @@ optisch sehr deutlich.
   IIm nächsten Abschnitt soll nun mithilfe eines Operationsverstärker-Impedanzwandlers
   der Innenwiderstand des Generators abgekoppelt werden. Um keine Verzerrungen bei der Erfassung
   des Signals zu bekommen, ist es hilfreich die Generatorspannung $\hat{u}_{gen}$ geringer zu wählen.
+  Wir haben uns für $\hat{u}_{gen} = 0.3V_{pp}$ entschieden
 \end{task}
 \begin{figure}[h]
   \begin{center}
     \includegraphics{../assets/images/ETP3/Versuch2Schaltplan.PNG}
     \caption{Schaltplan für den zweiten Versuch mit Operationsverstärker-Impedanzwandler}
   \end{center}
-  \end{figure}
-  \subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
-ugen = 0,3Vpp
+\end{figure}
+\subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
+
+Da nun nicht mehr $\frac{\hat{u}_C}{\hat{u}_{gen}} = \frac{\hat{u}_C}{1V}$ gilt, geben wir hier $\hat{u}_C$ getrennt davon nocheinmal an. 
+
 \begin{table}[h]
   \begin{center}
 
@@ -360,7 +369,11 @@ ugen = 0,3Vpp
     \caption{Spannungsverhältnis abgetragen gegen die Frequenz mit Impedanzwandler ($f_r = 990Hz$)}
   \end{center}
 \end{figure}
+Es ist eine deutliche Erhöhung der Steigung um die Resonanzfrequenz herum erkennbar, die aus der jetzt ungedämpften Schwingung
+der Generatorspannung und der Kondensatorspannung hervorgeht. Wir erkennen zudem eine kleine Verschiebung der Resonanzfrequenz im Gegensatz zum ersten Versuch,
+wobei wir in der Messung um 500Hz eine Verbesserung auf genau 500Hz erzielen. Bei der Messung um 1000Hz driften wir jedoch weiter vom vorrausgesagtem Wert ab auf 990Hz.
 
+\newpage
 
 \subsubsection{Berechnung der Güte und der Bandbreite}
 
@@ -368,17 +381,19 @@ ugen = 0,3Vpp
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      Resonanzfrequenz &  & \\
+      Resonanzfrequenz & 500 & 990 \\
       \hline
-      Q                &  & \\
+      Q                &  14,13   &  26,13   \\
       \hline
-      $\Delta$f        &  & \\
+      $\Delta$f        &  35,3857   &  37,8874   \\
       \hline
     \end{tabular}
     \caption{Aus den Messwerten berechnete Güte und Bandbreite}
     \label{tab:zMGB}
   \end{center}
 \end{table}
+
+
 
 \subsection{Vergleich}
 
