@@ -9,10 +9,10 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Ermittlung der Güte und der Bandbreite}{7}{subsubsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.2}Versuch 2}{8}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Bestimmung von $\frac {\hat {u}_C}{\hat {u}_{gen}}$}{8}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Graphische Darstellung}{9}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2}Graphische Darstellung}{8}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Berechnung der Güte und der Bandbreite}{9}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Vergleich}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Versuch mit höheren Resonanzfrequenzen}{10}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Resonanz - Schaltverhalten}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Serienschwingkreis mit Dämpfung}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{12}{subsection.3.2}%
+\contentsline {subsection}{\numberline {2.3}Vergleich}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Versuch mit höheren Resonanzfrequenzen}{9}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Resonanz - Schaltverhalten}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Serienschwingkreis mit Dämpfung}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{11}{subsection.3.2}%
