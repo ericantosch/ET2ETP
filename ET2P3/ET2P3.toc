@@ -15,4 +15,4 @@
 \contentsline {subsection}{\numberline {2.4}Versuch mit höheren Resonanzfrequenzen}{10}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Resonanz - Schaltverhalten}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Serienschwingkreis mit Dämpfung}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{11}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Aperiodischer Grenzfall}{12}{subsection.3.2}%
