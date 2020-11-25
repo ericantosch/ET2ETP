@@ -310,9 +310,11 @@ stark ähneln, da wir auch nur eine leichte Abweichung von der angenommenen Reso
     \caption{Schaltplan für den zweiten Versuch mit Operationsverstärker-Impedanzwandler}
   \end{center}
 \end{figure}
+
+\newpage
 \subsubsection{Bestimmung von $\frac{\hat{u}_C}{\hat{u}_{gen}}$}
 
-Da nun nicht mehr $\frac{\hat{u}_C}{\hat{u}_{gen}} = \frac{\hat{u}_C}{1V}$ gilt, geben wir hier $\hat{u}_C$ getrennt davon nocheinmal an. 
+Da nun nicht mehr $\frac{\hat{u}_C}{\hat{u}_{gen}} = \frac{\hat{u}_C}{1V}$ gilt, geben wir hier $\hat{u}_C$ getrennt davon nocheinmal an.
 
 \begin{table}[h]
   \begin{center}
@@ -356,14 +358,14 @@ Da nun nicht mehr $\frac{\hat{u}_C}{\hat{u}_{gen}} = \frac{\hat{u}_C}{1V}$ gilt,
 \end{table}
 
 \subsubsection{Graphische Darstellung}
-\begin{figure}[h]
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=0.75]{../assets/images/ETP3/Fre500Plot3.PNG}
     \caption{Spannungsverhältnis abgetragen gegen die Frequenz mit Impedanzwandler ($f_r = 500Hz$)}
   \end{center}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=0.75]{../assets/images/ETP3/Fre990Plot5.PNG}
     \caption{Spannungsverhältnis abgetragen gegen die Frequenz mit Impedanzwandler ($f_r = 990Hz$)}
@@ -381,11 +383,11 @@ wobei wir in der Messung um 500Hz eine Verbesserung auf genau 500Hz erzielen. Be
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      Resonanzfrequenz & 500 & 990 \\
+      Resonanzfrequenz & 500     & 990     \\
       \hline
-      Q                &  14,13   &  26,13   \\
+      Q                & 14,13   & 26,13   \\
       \hline
-      $\Delta$f        &  35,3857   &  37,8874   \\
+      $\Delta$f        & 35,3857 & 37,8874 \\
       \hline
     \end{tabular}
     \caption{Aus den Messwerten berechnete Güte und Bandbreite}
@@ -393,15 +395,21 @@ wobei wir in der Messung um 500Hz eine Verbesserung auf genau 500Hz erzielen. Be
   \end{center}
 \end{table}
 
+Wie auf den Abbildungen zu erkennen ist, ist die Bandbreite $\Delta f$ wesentlicher kleiner bzw. enger, während die Güte des
+Schwingkreises zugenommen hat.
+
 
 
 \subsection{Vergleich}
 
 Es wird ein sehr deutliche Bild erkenntlich, indem der Ausgleich des dämpfenden Innenwiderstands der
 Spannungsquelle ein deutlicheres Ergebnis im Bezug auf die Resonanzfrequenz und den entsprechenden Spannungsverhältnissen zulässt.
-Es ist jedoch zu bemerken, dass ein solcher Operationsverstärker das Äquivalent
+Es ist jedoch zu bemerken, dass ein solcher Schwingkreis mit angeschlossenem Operationsverstärker das Äquivalent zu einem System ist, welches man
+in der Mechanik als erzwungene Schwingung bezeichnet. Während in dem Fall eines mechanischen Systems der Luftwiderstand/Luftreibung das Dämpfen der Schwingung eines (z.B.)
+Pendels verursacht, wird in unserem Fall eine Dämpfung der Schwingung durch den elektrischen Widerstand erzeugt. Ein Ausgleich des Innenwiderstands $R_i$ der Spannungsquelle sorgt 
+für eine ungedämpfte aber erzwungene Schwingung des Schwingkreises.
 
-
+\newpage
 \subsection{Versuch mit höheren Resonanzfrequenzen}
 
 \begin{table}[h]
@@ -410,8 +418,8 @@ Es ist jedoch zu bemerken, dass ein solcher Operationsverstärker das Äquivalen
 
     \begin{tabular}{|c|c|c|c|c|}
       \hline $\mathrm{f}$       & $\mathrm{C}$        & $\hat{u}_{g e n}$ & $\hat{u}_C$       & $\mathrm{Q}$ \\
-      \hline $5 \mathrm{kH} z$  & $10,13 \mathrm{nF}$ & $300 \mathrm{mV}$ & $5,00 \mathrm{V}$ &              \\
-      \hline $10 \mathrm{kH} z$ & $2,53 \mathrm{nF}$  & $300 \mathrm{mV}$ & $2,2 \mathrm{V}$  &              \\
+      \hline $5 \mathrm{kH} z$  & $10,13 \mathrm{nF}$ & $300 \mathrm{mV}$ & $5,00 \mathrm{V}$ & $16,6$       \\
+      \hline $10 \mathrm{kH} z$ & $2,53 \mathrm{nF}$  & $300 \mathrm{mV}$ & $2,2 \mathrm{V}$  & $7,3$        \\
       \hline
     \end{tabular}
     \caption{Ergebnis aus der Testreihe mit höheren Frequenzen}
@@ -420,11 +428,15 @@ Es ist jedoch zu bemerken, dass ein solcher Operationsverstärker das Äquivalen
 \end{table}
 $$Q=\frac{1}{R} \cdot \sqrt{\frac{L}{C}} \Leftrightarrow R=\frac{1}{Q} \cdot \sqrt{\frac{L}{C}}$$
 \begin{equation*}
-  \text { Bei } f=5 k H z: \quad R=\frac{1}{24,1} \cdot \sqrt{\frac{100 m H}{10,13 n F}}=130,37 \Omega
+  \text { Bei } f=5 k H z: \quad R=\frac{1}{16,6} \cdot \sqrt{\frac{100 m H}{10,13 n F}}=189,27 \Omega
 \end{equation*}
 \begin{equation*}
-  \text { Bei } f=10 \mathrm{kHz}: \quad R=\frac{1}{19,28} \cdot \sqrt{\frac{100 \mathrm{mH}}{2,53 \mathrm{nF}}}=326,1 \Omega
+  \text { Bei } f=10 \mathrm{kHz}: \quad R=\frac{1}{7,3} \cdot \sqrt{\frac{100 \mathrm{mH}}{2,53 \mathrm{nF}}}=861,225 \Omega
 \end{equation*}
+
+Obwohl wir den Operationsverstärker-Impedanzwandler in diesem Fall in unserem Stromkreis vorhanden haben, sind die Werte für die Güte des Schwingkreises schlechter geworden. Sie liegen darüber hinaus
+unter den Werten von 990Hz, was entgegen der vorrausgegangenem Beobachtung ist. Hier spielt vor allen Dingen der Skin-Effekt eine tragende Rolle in der Erhöhung des reellen Widerstands und der damit einhergehenden Verringerung
+der Güte des Schwingkreises.
 
 \newpage
 \section{Resonanz - Schaltverhalten}
@@ -446,8 +458,15 @@ $$Q=\frac{1}{R} \cdot \sqrt{\frac{L}{C}} \Leftrightarrow R=\frac{1}{Q} \cdot \sq
 
 \subsection{Serienschwingkreis mit Dämpfung}
 
-Abbildung gedämpfter Schwingkreis\\\\
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[scale=0.5]{../assets/images/ETP3/Aufgabe210PeriodenSchwingung.PNG}
+      \caption{RLC-Resonanzkreis mit gedämpfter Schwingung}
+    \end{center}
+  \end{figure}
 
+  In der obigen Abbildung ist die gedämpfte Schwingung des Resonanzkreises dargestellt, wobei daraus das Dämpfungsmaß und die Kreisfrequenz abgelesen werden können.\\
+ Mittels der Cursor-Funktionen wurde die Spannung am den jeweiligen Spitzen abgelesen.\\
 Messwerte:
 \begin{table}[h]
   \begin{center}
@@ -461,18 +480,31 @@ Messwerte:
     \end{tabular}
   \end{center}
 \end{table}
+\newpage
 Berechnung des Dämpfungsmaß:
 \begin{align*}
   \delta   & = \frac{1}{T_d} \cdot \ln \left(\frac{Y_i}{Y_{i+1}}\right) = 200,67      \\
-  \omega   & = 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = 6,283kHz                     \\
-  \omega_r & = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{100mH \cdot 253,3nF}} = 6,283 kHz
 \end{align*}
 
+Bestimmung der Kreisfrequenz im gedämpften und ungedämpften Fall: 
+\begin{align*}
+\omega_D   & = 2\pi \cdot f = 2\pi \cdot \frac{1}{T_d} = 6,283kHz \\
+\omega_r   & = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{253,3nF \cdot 100mH}} = 6,283kHz
+\end{align*}
+
+Die berechnete ungedämpfte Kreisfrequenz entspricht bis auf Nachkommastellen ziemlich genau der ermittelten gedämpften Kreisfrequenz.
 
 \subsection{Aperiodischer Grenzfall}
 
-Abbildung Aperiodischer Grenzfall
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.5]{../assets/images/ETP3/Aufgabe2AperiodischerGrenzfall.PNG}
+    \caption{RLC-Resonanzkreis bei Aperiodizität}
+  \end{center}
+\end{figure}
 
-Wert liegt circa bei 1,0774kOhm
+Durch Erhöhung des Widerstandes wird die Dämpfung soweit gesteigert, bis die sogenannte Aperiodizität erreicht ist.\\
+Der Grenzfall der Aperiodizität tritt bei einem Widerstandswert von circa R = 1,075 k$\Omega$ auf.
+Dabei kommt es zu keinen weiteren Schwingungen, da diese vom Widerstand stark gedämpft werden.
 
 \end{document}
