@@ -133,15 +133,22 @@ Mit einer Freilaufdiode wird die Spannungsspitze jedoch auf die Durchlassspannun
 \end{task}
 \begin{devlist}
     T\begin{itemize}
-        \item Oszilloskop
-        \item Funktionsgenerator
+        \item Oszilloskop Tektronix MDO3012
+        \item Funktionsgenerator Rhode \& Schwarz HM8150
     \end{itemize}
 \end{devlist}
 Wir wollen nun zunächst die Anstiegs - und Abfallzeit bestimmen. Dazu messen wir die Zeit, die der Impuls benötigt, um von 10\%
-vom absoluten Spannungsbodens bis zu 10\% vom absoluten Spannungsdach zu kommen. Diese Zeit nennen wir Anstiegszeit $t_{rise}= $ . Gleichermaßen
-messen wir die Zeit von 10\% vom absoluten Spannungsdach bis zu 10\% vom absoluten Spannungsboden. Diese Zeit nennen wir Abfallzeit $t_{fall} = $.
+vom absoluten Spannungsbodens bis zu 10\% vom absoluten Spannungsdach zu kommen. Diese Zeit nennen wir Anstiegszeit $t_{rise}=206,5\mu s $ . Gleichermaßen
+messen wir die Zeit von 10\% vom absoluten Spannungsdach bis zu 10\% vom absoluten Spannungsboden. Diese Zeit nennen wir Abfallzeit $t_{fall} = 184\mu s$.
 
-Mithilfe des Oszilloskops bestimmen wir nun die Frequenz $\mathrm{f} = $ und das Tastverhältnis $\mathrm{a} = \frac{t_{high}}{T} = $.
+Mithilfe des Oszilloskops bestimmen wir nun die Frequenz $\mathrm{f} = 322,56Hz$ und das Tastverhältnis $\mathrm{a} = \frac{t_{high}}{T} = 58,06\%$.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe1.JPG}
+        \caption{Oszilloskop-Bild der Rechteckspannung mit Cursorfunktion}
+    \end{center}
+\end{figure}
 
 \newpage
 
@@ -164,43 +171,74 @@ Mithilfe des Oszilloskops bestimmen wir nun die Frequenz $\mathrm{f} = $ und das
 
 \begin{devlist}
     T\begin{itemize}
-        \item Oszilloskop
-        \item Funktionsgenerator
-        \item Tastteiler
+        \item Oszilloskop Tektronix MDO3012
+        \item Funktionsgenerator Rhode \& Schwarz HM8150
+        \item 1:10 Tastteiler
         \item Relais
-        \item Shuntwiderstand
+        \item 1N4007 Freilaufdiode
+        \item Multimeter MetraHit Tech
+        \item Shuntwiderstand $100\Omega$
     \end{itemize}
 \end{devlist}
 
 
 \subsection{Verhalten des Relais im stationären Zustand}
 
-Zunächst erhöhen wir von $U_B = 0V$ ausgehend die Spannung, bis wir das Relais zum Anzug bringen. Der entsprechende Strom $I_{an} = $ bezeichnen wir als 
+Zunächst erhöhen wir von $U_B = 0V$ ausgehend die Spannung, bis wir das Relais zum Anzug bringen. Der entsprechende Strom $I_{an} = 7mA$ findet sich bei einer Spannung $U_{an} = 6,1V$; den Strom bezeichnen wir als 
 den Anzugstrom; er stellt den minimalen Strom dar, der benötigt wird, damit das Relais anzieht.
-Als nächstes wollen wir nun den Strom $I_{end} = $ herausfinden, welcher den Storm bei $U_B = 15V$ im stationären Zustand darstellt. Von diesem Punkt aus
-reduzieren wir nun die Spannung wieder allmählich, bis das Relais erneut abfällt. Diesen Punkt bezeichnen wir als Abfallstrom $I_{ab} = $.
+Als nächstes wollen wir nun den Strom $I_{end} = 14,78mA$ herausfinden, welcher den Storm bei $U_B = 15V$ im stationären Zustand darstellt. Von diesem Punkt aus
+reduzieren wir nun die Spannung wieder allmählich, bis das Relais erneut abfällt. Diesen Punkt bezeichnen wir als Abfallstrom $I_{ab} = 2,82mA$ bei einer Abfallspannung von $U_{ab} = 2,4V$.
 
 
 \subsection{Einschaltvorgang}
 
 Wir stellen nun mit dem Oszilloskop im Zweikanalbetrieb den Strom über den Shuntwiderstand $R_M$ und die Spannung $u_k$ über den Schaltkontakt dar.
-Von besonderem Interesse ist hier dann die Verzögerungszeit $t_{ein} = $, die den zeitlichen Unterschied zwischen dem Einschalten der Versorgungsspannung des
+Von besonderem Interesse ist hier dann die Verzögerungszeit $t_{ein} = 8,292ms$, die den zeitlichen Unterschied zwischen dem Einschalten der Versorgungsspannung des
 Relais und des Umschalten des Relais darstellt.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe2b.JPG}
+        \caption{Die Bestimmung des Einschaltvorgangs mit den entsprechenden Werten}
+    \end{center}
+\end{figure}
 
 \subsection{Auschaltvorgang ungelöscht}
 
 Ähnlich zum vorigen Versuch untersuchen wir nun hier den Ausschaltvorgang ohne Freilaufdiode, indem wir dem eingeschwungenem System nun die 
-Versorgungsspannung entziehen. Dabei wollen wir die Maximalspannung $\hat{u}_{Rel} = $ im Moment des Ausschalten des Oszilloskops messen, sowie die Ausschaltverzögerung
-$t_{aus} = $.
+Versorgungsspannung entziehen. Dabei wollen wir die Maximalspannung $\hat{u}_{Rel} = 5,08V$ im Moment des Ausschalten des Relais messen, sowie die Ausschaltverzögerung
+$t_{aus} = 3,283ms$.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe2c.JPG}
+    \end{center}
+\end{figure}
 
 \subsection{Ausschaltvorgang mit Freilaufdiode}
 
-Wir wiederholen den vorhergegangen Versuch nun mit einer Freilaufdiode (eingebaut wie auf dem Schaltbild 2 in der Aufgabenstellung(s. oben)). Der Wert für $\hat{u}_{Rel} = $ und $t_{aus} = $ werden 
+Wir wiederholen den vorhergegangen Versuch nun mit einer Freilaufdiode (eingebaut wie auf dem Schaltbild 2 in der Aufgabenstellung(s. oben)). Der Wert für $\hat{u}_{Rel} = 15V$ und $t_{aus} = 19,56ms$ werden 
 ebenfalls aufgezeichnet.
 
 \subsection{Bestimmung von Induktivität und Gleichstromwiderstand, sowie Ausschaltverzögerung}
+
+Wir messen den Gleichstromwiderstand des Relais $R_{gl} = 863,6\Omega$ mithilfe des MetraHit Tech Multimeters.
 \subsubsection{Ohne Freilaufdiode}
 
+Wir wollen nun die Induktivität der Spule bestimmen, indem wir einen weiteren Einschaltvorgang simulieren und daraus die Zeitkonstante $\tau$ bestimmen. 
+Aus der Zeitfunktion der Spule:
+\begin{equation}
+    I(t) = I_0 \cdot \left(1-e^{-\frac{R}{L}\cdot t}\right) 
+\end{equation}
+wissen wir, dass wir durch das Bestimmen von $\tau$ nun auch die Induktivität L über 
+\begin{equation}\label{eq:Rt}
+    L = R\cdot\tau
+\end{equation}
+berechnen können. Wir stellen dazu bei der Einschaltkurve der Spule die Cursorfunktion auf den Einschaltmoment und den Moment des Erreichens der 63\%-Grenze ein.
+Wir erhalten damit ein $\tau = 13,48ms$. Mit (\ref{eq:Rt}) und dem Gleichstromwiderstand sowie dem Widerstand $R_M$ rechnen wir nun:
+\begin{equation*}
+    L = (R_M + R_{gl})\cdot \tau = (100\Omega + 863,6\Omega)\cdot 13,48ms = 12,988H
+\end{equation*}
 \subsubsection{Mit Freilaufdiode}
 
 \subsection{Auswertung}
@@ -221,8 +259,8 @@ TIn diesem Versuch geht es um den zeitlichen Verlauf einer Kondensatorspannung b
 \begin{devlist}
     T
     \begin{itemize}
-        \item Oszilloskop
-        \item Funktionsgenerator
+        \item Oszilloskop Tektronix MDO3012
+        \item Funktionsgenerator Rhode \& Schwarz HM8150
     \end{itemize}
 \end{devlist}
 \subsection{Aufladung, Schalterstellung A}
