@@ -160,7 +160,7 @@ Mithilfe des Oszilloskops bestimmen wir nun die Frequenz $\mathrm{f} = $ und das
     \end{center}
 \end{figure}
 
-\newpage
+
 
 \begin{devlist}
     T\begin{itemize}
@@ -175,6 +175,35 @@ Mithilfe des Oszilloskops bestimmen wir nun die Frequenz $\mathrm{f} = $ und das
 
 \subsection{Verhalten des Relais im stationären Zustand}
 
+Zunächst erhöhen wir von $U_B = 0V$ ausgehend die Spannung, bis wir das Relais zum Anzug bringen. Der entsprechende Strom $I_{an} = $ bezeichnen wir als 
+den Anzugstrom; er stellt den minimalen Strom dar, der benötigt wird, damit das Relais anzieht.
+Als nächstes wollen wir nun den Strom $I_{end} = $ herausfinden, welcher den Storm bei $U_B = 15V$ im stationären Zustand darstellt. Von diesem Punkt aus
+reduzieren wir nun die Spannung wieder allmählich, bis das Relais erneut abfällt. Diesen Punkt bezeichnen wir als Abfallstrom $I_{ab} = $.
+
+
+\subsection{Einschaltvorgang}
+
+Wir stellen nun mit dem Oszilloskop im Zweikanalbetrieb den Strom über den Shuntwiderstand $R_M$ und die Spannung $u_k$ über den Schaltkontakt dar.
+Von besonderem Interesse ist hier dann die Verzögerungszeit $t_{ein} = $, die den zeitlichen Unterschied zwischen dem Einschalten der Versorgungsspannung des
+Relais und des Umschalten des Relais darstellt.
+
+\subsection{Auschaltvorgang ungelöscht}
+
+Ähnlich zum vorigen Versuch untersuchen wir nun hier den Ausschaltvorgang ohne Freilaufdiode, indem wir dem eingeschwungenem System nun die 
+Versorgungsspannung entziehen. Dabei wollen wir die Maximalspannung $\hat{u}_{Rel} = $ im Moment des Ausschalten des Oszilloskops messen, sowie die Ausschaltverzögerung
+$t_{aus} = $.
+
+\subsection{Ausschaltvorgang mit Freilaufdiode}
+
+Wir wiederholen den vorhergegangen Versuch nun mit einer Freilaufdiode (eingebaut wie auf dem Schaltbild 2 in der Aufgabenstellung(s. oben)). Der Wert für $\hat{u}_{Rel} = $ und $t_{aus} = $ werden 
+ebenfalls aufgezeichnet.
+
+\subsection{Bestimmung von Induktivität und Gleichstromwiderstand, sowie Ausschaltverzögerung}
+\subsubsection{Ohne Freilaufdiode}
+
+\subsubsection{Mit Freilaufdiode}
+
+\subsection{Auswertung}
 
 \newpage
 
@@ -216,7 +245,7 @@ Skizze:
 Berechnung der Entladezeitkonstante $\tau_E$:
 \begin{align*}
     \tau_E &= R\cdot C = (330\Omega + 100\Omega) \cdot 10\mu F \\
-    \tau_E &= 430\mu s
+    \tau_E &= 4300\mu s = 4,3ms
 \end{align*}
 Die dazugehörige Entladefunktion u$_c$(t) lautet:
 \begin{align*}
