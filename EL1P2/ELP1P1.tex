@@ -1,0 +1,332 @@
+\documentclass{article}
+
+\usepackage{circuitikz} %Für die Schaltpläne
+\usepackage[T1]{fontenc} 
+\usepackage[UTF8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{../assets/scripts/tex/color-env}
+\usepackage[ngerman]{babel}
+
+
+
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{arrows.meta,topaths}
+    \usetikzlibrary{bending}
+    \usetikzlibrary{calc}
+\title{Elektrotechnik 1 - Praktikum 1}
+
+
+\usepackage[
+  includehead,
+  headheight = 17mm,
+  footskip = \dimexpr\headsep+\ht\strutbox\relax,
+  tmargin = 0mm,
+  bmargin = \dimexpr17mm+2\ht\strutbox\relax,
+]{geometry}
+
+\usepackage{anyfontsize}
+
+\usepackage{xcolor}
+
+\definecolor{DarkGreenBlue}{HTML}{264653}
+\definecolor{LightGreenBlue}{HTML}{2A9D8F}
+\definecolor{LightOrange}{HTML}{E9C46A}
+\definecolor{DarkOrange}{HTML}{F4A261}
+\definecolor{RedOrange}{HTML}{E76F51}
+\definecolor{BrightRed}{HTML}{D62828}
+\definecolor{DeepBlue}{HTML}{003049}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\includegraphics[scale=0.2]{../assets/images/haw.jpg}}
+\renewcommand\headrulewidth{0.5pt}
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[overlay,remember picture]
+  \thispagestyle{empty}
+  \fill[black!2] (current page.south west) rectangle (current page.north east);
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(-.5,-6)$)}}]
+
+    \shade[rounded corners=18pt, left color=DarkGreenBlue, right color=LightGreenBlue] ($(current page.north west)+(-.5,-6)$) rectangle ++(9,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(.5,-10)$)}}]
+
+    \shade[rounded corners=18pt, left color=LightOrange,right color=DarkOrange] ($(current page.north west)+(0.5,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(0.5,-10)$)}}]
+
+    \shade[rounded corners=8pt, right color=DarkOrange, left color=LightOrange] ($(current page.north west)+(1.5,-9.55)$) rectangle ++(7,.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-1.5,-3)$)}}]
+
+    \shade[rounded corners=12pt, left color=DeepBlue!80, right color=DeepBlue!60] ($(current page.north)+(-1.5,-3)$) rectangle ++(9,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north)+(-3,-8)$)}}]
+
+    \shade[rounded corners=28pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north)+(-3,-8)$) rectangle ++(15,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(4,-15.5)$)}}]
+
+    \shade[rounded corners=25pt, left color=RedOrange, right color=DarkOrange] ($(current page.north west)+(4,-15.5)$) rectangle ++(30,1.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(13,-10)$)}},]
+
+    \shade[rounded corners=22pt, left color=DeepBlue,right color=DarkGreenBlue] ($(current page.north west)+(13,-10)$) rectangle ++(15,1.5);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(18,-8)$)}},]
+
+    \shade[rounded corners=8pt, left color=DarkOrange] ($(current page.north west)+(18,-8)$) rectangle ++(15,0.6);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(19,-5.65)$)}},]
+
+    \shade[rounded corners=12pt, left color=RedOrange] ($(current page.north west)+(19,-5.65)$) rectangle ++(15,0.8);
+
+  \end{scope}
+
+  \begin{scope}[transform canvas ={rotate around ={45:($(current page.north west)+(20,-9)$)}}]
+
+    \shade[rounded corners=20pt, left color=BrightRed, right color=BrightRed!80] ($(current page.north west)+(20,-9)$) rectangle ++(14,1.2);
+
+  \end{scope}
+
+  \draw[ultra thick,gray] ($(current page.center)+(5,2)$) -- ++(0,-3cm) node[midway,left=0.25cm,text width=5cm,align=right,black!75]{{\fontsize{25}{30} \selectfont \bf Elektronik 1\\[10pt] Praktikum 2}} node[midway,right=0.25cm,text width=6cm,align=left,orange]{{\fontsize{70}{86} \selectfont 2020}};
+
+  \node at ($(current page.center)+(0,-4)$) {{\fontsize{60}{72} \selectfont Diode}};
+
+  \node[text width=8cm,align=center] at ($(current page.center)+(0,-6.5)$) {{\fontsize{16}{20} \selectfont \textcolor{orange}{ \bf \today}} \\[3pt] Florian Tietjen\\[3pt] Eric Antosch};
+
+\end{tikzpicture}
+\newpage
+\thispagestyle{empty}
+
+\tableofcontents
+
+
+\newpage
+
+
+\section{Durchlasskennlinien von Germanium- und Siliziumdiode}
+\begin{task}
+  TIn der ersten Aufgabe wollen wir die Kennlinien einer AA138 Germaniumdiode
+  und einer 1N4148 Siliziumdiode mithilfe des X-Y-Schreibers des Oszilloskops aufnehmen.
+\end{task}
+
+\begin{figure}[h]
+  \begin{center}
+    \begin{circuitikz}[european]
+      \draw (0,0) to[vsource, l=$U_0$] (0,4) to[diode, l_=$D$] (4,4) to[R, l_=$R_v$] (4,0) to[short] (0,0);
+      \draw (1,4) to[short] (1,5) to[voltmeter, l=$U_x$] (3,5) to[short] (3,4);
+      \draw (4,3) to[short] (5,3) to[voltmeter, l=$U_y$] (5,1) to[short] (4,1);
+    \end{circuitikz}
+    \caption{Aufbauzeichnung der Messung mithilfe des X-Y-Schreibers}
+  \end{center}
+\end{figure}
+
+\begin{devlist}
+  T\begin{itemize}
+    \item Oszilloskop
+    \item Funktionsgenerator
+    \item AA138 Germaniumdiode
+    \item 1N4148 Siliziumdiode
+  \end{itemize}
+\end{devlist}
+
+\newpage
+
+\subsection{Vorbereitung}
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/images/EL1P2/VorbereitungAA138.png}
+    \caption{Kennlinie der AA138 Germaniumdiode}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/images/EL1P2/Vorbereitung1N4148.png}
+    \caption{Kennlinie der 1N4148 Siliziumdiode}
+  \end{subfigure}
+  \caption{Die beiden Kennlinien der Dioden simuliert mit Shockley in Matlab}
+\end{figure}
+
+\subsection{Versuchsdurchführung}
+
+Wir messen mithilfe des X-Y-Schreibers, wie im Versuchsaufbau gezeigt, den Strom über die Diode indirekt mithilfe der Spannung 
+über den Vorwiderstand (Shunt). Die Spannung über die Diode messen wir einfach direkt mit den X-Eingängen des Schreibers. Den Strom durch den Schaltkreis regeln wir bis zu einem Stromfluss von 10mA hoch und nehmen dabei die 
+Kennlinie der jeweiligen Diode auf.
+
+\subsection{Auswertung}
+
+Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und bestimmen daraus die Steigung und damit den differentiellen Widerstand der Diode:
+
+\newpage
+
+\section{Durchlasskennlinien der Siliziumdiode in halblogarithmischer Darstellung}
+\begin{task}
+  TIn diesem Versuch wollen wir erneut die Kennlinie der 1N4148 Siliziumdiode aufnehmen, wobei wir sowohl mehr Messpunkte als auch 
+  eine halblogarithmische Darstellung wählen.
+\end{task}
+
+\begin{figure}[h]
+  \begin{center}
+    \begin{circuitikz}[european]
+      \draw (0,0) to[vsource, l=$U_0$] (0,4) to[diode, l_=$D$] (4,4) to[R, l_=$R_v$] (4,0);
+      \draw (0,0) to[ammeter] (4,0);
+      \draw (1,4) to[short, *-] (1,5) to[voltmeter, l=$U_x$] (3,5) to[short, -*] (3,4);
+    \end{circuitikz}
+    \caption{Aufbauzeichnung der Messung mithilfe des MetraHit Tech Multimeter}
+  \end{center}
+\end{figure}
+
+\begin{devlist}
+  T\begin{itemize}
+    \item Oszilloskop
+    \item Funktionsgenerator
+    \item AA138 Germaniumdiode
+    \item 1N4148 Siliziumdiode
+  \end{itemize}
+\end{devlist}
+
+\subsection{Vorbereitung}
+
+\subsection{Versuchsdurchführung}
+
+
+    \begin{tabular}{|c|c|}
+      If & Uf  \\
+      $10\mu A$ & 0,396V\\
+      $20\mu A$ & 0,433V\\
+      $50\mu A$ & 0,4761V\\
+      $100\mu A$ & 0,5079V\\
+      $200\mu A$ & 0,5418V\\
+      $500\mu A$ & 0,5873\\
+      $1mA$ & 0,6219V\\
+      $2mA$ & 0,6551V\\
+      $5mA$ & 0,7018V\\
+      $10mA$ & 0,7393V\\
+    \end{tabular}
+\subsection{Auswertung}
+
+\section{Einweggleichrichterschaltung}
+\begin{task}
+  TIn diesem Versuch wollen wir die Eigenschaften einer Einweggleichrichterschaltung mithilfe der uns 
+  vermittelten Methoden analysieren und auswerten.
+\end{task}
+
+\begin{devlist}
+  T\begin{itemize}
+    \item Oszilloskop
+    \item Funktionsgenerator
+    \item AA138 Germaniumdiode
+    \item 1N4148 Siliziumdiode
+  \end{itemize}
+\end{devlist}
+
+\subsection{Vorbereitung}
+
+\subsection{Versuchsdurchführung}
+$U1 47nF$:
+Wechseleffektivwert: 7,053V
+Gesamteffektivwert: 7,053V
+Gleichanteil: -0,5V
+
+$U2 47nF$:
+Wechseleffektivwert:2,42V
+Gesamteffektivwert: 5,681V
+Gleichanteil:5.151
+
+$U1 470nF$:
+Wechseleffektivwert: 7,053V
+Gesamteffektivwert: 7,053V
+Gleichanteil: -0,5V
+
+$U2 470nF$:
+Wechseleffektivwert:1,756V
+Gesamteffektivwert: 6,63V
+Gleichanteil:6,414
+
+
+
+
+
+\subsection{Auswertung}
+
+\section{Zweiweggleichrichterschaltung}
+
+\begin{task}
+  TIn dem letzten Versuch wollen wir nun die Eigenschaften einer Zweiweggleichrichterschaltung mithilfe der uns vermittelten
+  Methoden analysieren und auswerten.
+\end{task}
+
+\begin{devlist}
+  T\begin{itemize}
+    \item Oszilloskop
+    \item Funktionsgenerator
+    \item AA138 Germaniumdiode
+    \item 1N4148 Siliziumdiode
+  \end{itemize}
+\end{devlist}
+
+\subsection{Vorbereitung}
+
+\subsection{Versuchsdurchführung}
+
+
+$U1 47nF$:
+Wechseleffektivwert: 7,012V
+Gesamteffektivwert: 7,012V
+Gleichanteil: -0,53V
+
+$U2 47nF$:
+Wechseleffektivwert:1,441V
+Gesamteffektivwert: 7,42V
+Gleichanteil:7,382V
+
+$U1 470nF$:
+Wechseleffektivwert: 7V
+Gesamteffektivwert: 7V
+Gleichanteil: -0,5V
+
+$U2 470nF$:
+Wechseleffektivwert: 0,21V
+Gesamteffektivwert: 8,172V
+Gleichanteil: 8,174V
+\subsection{Auswertung}
+
+
+
+\end{document}
