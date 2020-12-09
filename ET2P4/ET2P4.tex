@@ -215,16 +215,24 @@ Relais und des Umschalten des Relais darstellt.
 Versorgungsspannung entziehen. Dabei wollen wir die Maximalspannung $\hat{u}_{Rel} = 5,08V$ im Moment des Ausschalten des Relais messen, sowie die Ausschaltverzögerung
 $t_{aus} = 3,283ms$.
 
-\begin{figure}
+\begin{figure}[!h]
     \begin{center}
         \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe2c.JPG}
+        \caption{Der Ausschaltvorgang ohne Freilaufdiode (ungelöscht)}
     \end{center}
 \end{figure}
-
+\newpage
 \subsection{Ausschaltvorgang mit Freilaufdiode}
 
 Wir wiederholen den vorhergegangen Versuch nun mit einer Freilaufdiode (eingebaut wie auf dem Schaltbild 2 in der Aufgabenstellung(s. oben)). Der Wert für $\hat{u}_{Rel} = 15V$ und $t_{aus} = 19,56ms$ werden 
 ebenfalls aufgezeichnet.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe2d.JPG}
+    \caption{Ausschaltvorgang mithilfe einer Freilaufdiode. Der Prozess wird länger jedoch offensichtlich kontrollierter}
+  \end{center}
+\end{figure}
 
 \subsection{Bestimmung von Induktivität und Gleichstromwiderstand, sowie Ausschaltverzögerung}
 
@@ -251,7 +259,7 @@ Wir erhalten damit ein $\tau = 13,48ms$. Mit (\ref{eq:Rt}) und dem Gleichstromwi
 \begin{figure}[h]
   \begin{center}
       \includegraphics[scale=0.9]{../assets/images/ET2P4/mit freilaufdiode.jpg}
-      \caption{Auschaltvorgang mit Freilaufdiode}
+      \caption{Ausschaltvorgang mit Freilaufdiode}
   \end{center}
 \end{figure}
 Mittels der Cursor-Funktion wurde eine Abfallzeit t$_{ab}$ von 18ms ermittelt. Im Vergleich zur Schaltung ohne Freilaufdiode hat die Abfallzeit deutlich zugenommen.
@@ -284,6 +292,8 @@ TIn diesem Versuch geht es um den zeitlichen Verlauf einer Kondensatorspannung b
         \item Funktionsgenerator Rhode \& Schwarz HM8150
     \end{itemize}
 \end{devlist}
+\newpage
+
 \subsection{Aufladung, Schalterstellung A}
 Berechnung der Aufladezeitkonsante und der Kondensatorspannung im aufgeladenen Zustand:
 \begin{align*}
@@ -297,9 +307,15 @@ Für den Aufladevorgang lautet die Funktion u$_c$(t) lautet dann:
     u_c(t)&= U_0 \cdot (1 - e^{-\frac{t}{RC}})\\
     u_c(t)&= 2,7V \cdot (1 - e^{-\frac{t}{21,3ms}})
 \end{align*}
-Skizze:
-\subsubsection{Messung mit Oszilloskop}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{../assets/images/ET2P4/aufladefunktion.JPG}
+    \caption{Aufladefunktion des Kondensator mit Matlab simuliert}
+  \end{center}
+\end{figure}
+
  
+\newpage
 \subsection{Entladung, Schalterstellung B}
 Berechnung der Entladezeitkonstante $\tau_E$:
 \begin{align*}
@@ -311,7 +327,34 @@ Die dazugehörige Entladefunktion u$_c$(t) lautet:
     u_c(t)&= U_0 \cdot e^{-\frac{t}{RC}}\\
     u_c(t)&= 2,7V \cdot e^{-\frac{t}{4,3ms}}
 \end{align*}
-\subsubsection{Messung mit Oszilloskop}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{../assets/images/ET2P4/entladefunktion.JPG}
+    \caption{Entladefunktion des Kondensator mit Matlab simuliert}
+  \end{center}
+\end{figure}
+
+\newpage
+\subsection{Messung mit Oszilloskop}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=0.45]{../assets/images/ET2P4/aufgabe3Fehler.JPG}
+    \caption{Fehlerhaftes Verhalten der Ladekurve des Kondensators durch unzureichendes Einstellen des Oszilloskops}
+    \label{fig:error}
+  \end{center}
+\end{figure}
+
+Im Zuge unsere Messung der tatsächlichen Auf- und Entladefunktion sind uns einige grundlegende Fehler unterlaufen. Wie auf der Abbildung (\ref{fig:error}) zu 
+sehen, haben wir eine Ladekurve, die von zwei $\tau$ bestimmt zu sein scheint. Ein langsam steigendes $\tau_1$, welches die Kurve annähernd linear macht und ein 
+$\tau_2$, welches ein abruptes (sehr schnelles) Ende der Ladekurve bestimmt, welches als scharfe Ecke erkannt wird. Diese Fehler entstanden durch ein fehlerhaftes Einstellen des Maßstabes am
+Oszilloskop. Wir haben in einer Weise nur einen kleinen Teil der Ladekurve betrachtet und haben daher diese sehr befremdlich anmutende Kurve bekommen. Das Oszilloskop versucht hier den 
+kompletten Verlauf abzubilden, stellt den ersten Verlauf daher als linear, also sehr schwach steigend dar. Ab einem Punkt muss der Prozess jedoch abgebrochen werden, da die Speicherkapazitäten überschritten werden.
+Es kommt zu einer schnellen Beendigung des Prozesses.
+Darüberhinaus nehmen die Schwingungen am Einschaltpunkt der Aufnahme ihren Ursprung in der Schwingung des verwendeten Schalters und der rauen Oberfläche der Schalterflächen, die an ihren Spitzen Kontakt aufbauen, dann jedoch
+durch die Hitze schmelzen und den Kontakt erneut abbrechen.
+
 \subsection{Vergleich der gemessenen Zeitkonstanten $\tau_A$ und $\tau_E$}
 
 \end{document}
