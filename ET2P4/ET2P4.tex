@@ -120,6 +120,12 @@ Ein Tastteiler, auch Prüfling oder Tastkopf genannt, ist ein Messmittel, welche
 Ein Relais ist vereinfacht gesagt ein elektromagnetischer Schalter, welcher durch Anlegen einer Spannung seine Ein- und Ausgänge schließt oder öffnet.
  
 \subsection{Funktion einer Freilaufdiode}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.2]{../assets/images/ET2P4/freilaufdiode.JPG}
+    \caption{Schaltung mit Freilaufdiode}
+\end{center}
+\end{figure}
 Freilaufdioden sind Dioden, die zum Schutz vor Überspannung beim Abschalten einer induktiven Last dienen.
 Nach dem Abschalten der Versorgungsspannung sorgt die Selbstinduktion einer Spule dafür, dass der Strom zunächst in der ursprünglichen Richtung weiter fließt. 
 Ohne Freilaufdiode führt das zu einer Spannungsspitze, die sich zur Betriebsspannung addiert und dabei elektrische Bauteile beschädigen könnte.
@@ -239,9 +245,24 @@ Wir erhalten damit ein $\tau = 13,48ms$. Mit (\ref{eq:Rt}) und dem Gleichstromwi
 \begin{equation*}
     L = (R_M + R_{gl})\cdot \tau = (100\Omega + 863,6\Omega)\cdot 13,48ms = 12,988H
 \end{equation*}
+
+\newpage
 \subsubsection{Mit Freilaufdiode}
+\begin{figure}[h]
+  \begin{center}
+      \includegraphics[scale=0.9]{../assets/images/ET2P4/mit freilaufdiode.jpg}
+      \caption{Auschaltvorgang mit Freilaufdiode}
+  \end{center}
+\end{figure}
+Mittels der Cursor-Funktion wurde eine Abfallzeit t$_{ab}$ von 18ms ermittelt. Im Vergleich zur Schaltung ohne Freilaufdiode hat die Abfallzeit deutlich zugenommen.
+Dafür kommt es jedoch zu keinen Spannungspitzen mehr.
 
 \subsection{Auswertung}
+Der Versuch hat relativ gut den Nutzen und die Funktionsweise eines Relais gezeigt. Dabei fungiert dies sozusagen als steuerbarer Schalter-.
+Mittels einem Relais könnte man größere Lasten schalten, wobei das Relais selbst nur eine geringe Spannung benötigt. Sobald die Mindestspannung von 6,1V am Relais anliegt, zieht das Relais an und schließt damit den Schalter. Dieser Anzug ist auch leise zu hören.\\
+Da das Relais eine induktive Last darstellt, kann beim Abschalten die in der Spule gespeicherte Energie unkontrolliert austreten. Beispielsweise durch kurze Spannungsspitzen, wodurch dann benachbarte elektrische Teile beschädigt werden können.
+Wenn allerdings eine Diode parallel zum Relais und in Sperrrichtung zur Spannungsversorgung angeschlossen wird, wird die Energie in der Spule kontrolliert indem sich der Strom durch die Diode totläuft. 
+Jedoch kommt es zu einer höheren Abfallzeit.
 
 \newpage
 
@@ -288,7 +309,7 @@ Berechnung der Entladezeitkonstante $\tau_E$:
 Die dazugehörige Entladefunktion u$_c$(t) lautet:
 \begin{align*}
     u_c(t)&= U_0 \cdot e^{-\frac{t}{RC}}\\
-    u_c(t)&= 2,7V \cdot e^{-\frac{t}{470\mu s}}
+    u_c(t)&= 2,7V \cdot e^{-\frac{t}{4,3ms}}
 \end{align*}
 \subsubsection{Messung mit Oszilloskop}
 \subsection{Vergleich der gemessenen Zeitkonstanten $\tau_A$ und $\tau_E$}
