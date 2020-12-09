@@ -2,7 +2,7 @@
 
 \usepackage{circuitikz} %Für die Schaltpläne
 \usepackage[T1]{fontenc} 
-\usepackage[UTF8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
@@ -19,7 +19,7 @@
     \usetikzlibrary{arrows.meta,topaths}
     \usetikzlibrary{bending}
     \usetikzlibrary{calc}
-\title{Elektrotechnik 1 - Praktikum 1}
+\title{Elektrotechnik 1 Praktikum 1}
 
 
 \usepackage[
@@ -156,7 +156,7 @@
 
 \begin{devlist}
   T\begin{itemize}
-    \item Oszilloskop
+    \item Oszilloskop: Tektronix MDO3012
     \item Funktionsgenerator
     \item AA138 Germaniumdiode
     \item 1N4148 Siliziumdiode
@@ -220,25 +220,40 @@ Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und best
     \item 1N4148 Siliziumdiode
   \end{itemize}
 \end{devlist}
-
+\newpage
 \subsection{Vorbereitung}
 
 \subsection{Versuchsdurchführung}
 
-
-    \begin{tabular}{|c|c|}
-      If & Uf  \\
-      $10\mu A$ & 0,396V\\
-      $20\mu A$ & 0,433V\\
-      $50\mu A$ & 0,4761V\\
-      $100\mu A$ & 0,5079V\\
-      $200\mu A$ & 0,5418V\\
-      $500\mu A$ & 0,5873\\
-      $1mA$ & 0,6219V\\
-      $2mA$ & 0,6551V\\
-      $5mA$ & 0,7018V\\
-      $10mA$ & 0,7393V\\
-    \end{tabular}
+\begin{table}[h]
+  \begin{center}
+\begin{tabular}{|c|c|}
+  \hline
+  If & Uf  \\
+  \hline
+  $10\mu A$ & 0,396V\\
+  \hline
+  $20\mu A$ & 0,433V\\
+  \hline
+  $50\mu A$ & 0,4761V\\
+  \hline
+  $100\mu A$ & 0,5079V\\
+  \hline
+  $200\mu A$ & 0,5418V\\
+  \hline
+  $500\mu A$ & 0,5873\\
+  \hline
+  $1mA$ & 0,6219V\\
+  \hline
+  $2mA$ & 0,6551V\\
+  \hline
+  $5mA$ & 0,7018V\\
+  \hline
+  $10mA$ & 0,7393V\\
+  \hline
+\end{tabular}
+\end{center}
+\end{table}
 \subsection{Auswertung}
 
 \section{Einweggleichrichterschaltung}
