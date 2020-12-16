@@ -1,8 +1,10 @@
 \documentclass{article}
 
+
+\usepackage{subcaption}
 \usepackage{circuitikz}
 \usepackage[T1]{fontenc} 
-\usepackage[UTF8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{fancyhdr}
@@ -94,7 +96,7 @@
 
   \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=3cm, rounded corners] at ($(current page.north east)+(0,-9.5)$){{\fontsize{25}{30} \selectfont \bfseries ET2 - Praktikum 6}};
 
-  \node[left,DeepBlue!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-11)$){{\huge \textit{Transiente Vorgänge}}};
+  \node[left,DeepBlue!10,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-11)$){{\huge \textit{Simulation Transienter Vorgänge}}};
 
   \node[left,DeepBlue!5,minimum width=0.625*\paperwidth,minimum height=2cm, rounded corners] at ($(current page.north east)+(0,-13)$){{\Large \textsc{Florian Tietjen\hspace{0.5cm}Eric Antosch}}};
 
@@ -110,6 +112,46 @@
 
 \section{Vorbereitung}
 \subsection{Schaltvorgang einer RC-Reihenschaltung}
+
+Es seien $R_{1}$ und $C_{1}$ in Reihe geschaltet und über einen Schalter mit einer Gleichspannungsquelle von $U_{1} = 60V$ verbunden. Zum Zeitpunkt $t_{0} = 0ms$ wird der Schalter geschlossen, es sei dabei $R_{1} = 2k\Omega$ und $C_{1} = 10\mu F$.
+Wir berechnen dazu zunächst $\tau = R_{1} \cdot C_{1} = 2k\Omega \cdot 10\mu F = 0,02 s$. Damit können wir nun mit der folgenden Formel:
+\begin{equation}
+  \label{eq:1}
+  u_{C}(t) = U_{0} + \Delta U \cdot e^{-\frac{t}{\tau}} = U_{0} + (U_{C,t_{0}} - U_{0})\cdot e^{-\frac{t}{\tau}}
+\end{equation}
+\begin{equation}
+  \label{eq:2}
+  i_{C}(t) = \frac{u_{C}(t)}{R_{C}}
+\end{equation}
+
+Damit können wir nun die Werte für $u_{C}(t_{1})$ und $i_{C}(t_{1})$ berechnen, wobei $t_{1} = 12ms$ gilt.
+
+\begin{equation*}
+  u_{C}(t_{1}) = U_{0}+\Delta U \cdot e^{-\frac{t}{\tau}} = 60V + -60V \cdot e^{-\frac{12ms}{20ms}} = 27,071V.
+\end{equation*}
+\begin{equation*}
+  i_{C}(t_{1}) = \frac{u_{C}(t_{1})}{R_{C}} = \frac{27,071V}{2k\Omega} = 0,0135355A.
+\end{equation*}
+
+\begin{figure}[h]
+\centering
+    \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/images/ET2P5/Kondensatorspannung11.png}
+    \caption{Aufladespannungskurve des Kondensators}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/images/ET2P5/Kondensatorstrom11.png}
+    \caption{Aufladestromkurve des Kondensators}
+  \end{subfigure}
+
+  \caption{Kondensatorspannung für a) im Zeitraum $\tau$}
+  \label{fig:con1}
+\end{figure}
+
+
 
 \subsection{Schaltvorgang bei einem Netzwerk mit einem Kondensator (ein Schaltzeitpunkt)}
 
