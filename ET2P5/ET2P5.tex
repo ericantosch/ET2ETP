@@ -130,7 +130,7 @@ Damit können wir nun die Werte für $u_{C}(t_{1})$ und $i_{C}(t_{1})$ berechnen
   u_{C}(t_{1}) = U_{0}+\Delta U \cdot e^{-\frac{t}{\tau}} = 60V + -60V \cdot e^{-\frac{12ms}{20ms}} = 27,071V.
 \end{equation*}
 \begin{equation*}
-  i_{C}(t_{1}) = \frac{u_{C}(t_{1})}{R_{C}} = \frac{27,071V}{2k\Omega} = 0,0135355A.
+  i_{C}(t_{1}) = \frac{U_{0}}{R_{C}} \cdot e^{-\frac{t}{\tau}} = \frac{60V}{2k\Omega} \cdot e^{-\frac{12ms}{20ms}} = 0,01646A.
 \end{equation*}
 
 \begin{figure}[h]
