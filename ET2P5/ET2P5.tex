@@ -290,7 +290,87 @@ Lösen des Stroms nach $200\mu$s:
 \end{align*}
 
 \newpage
-\section{Versuch 2}
+\section{Schaltvorgang einer RC-Reihenschaltung}
+
+\begin{task}
+  T
+  In diesem Versuch wollen wir den Schaltvorgang einer RC-Reihenschaltung mithilfe von LTSpice simulieren und anschließend untersuchen. Dazu verwenden wir genau zum einen einen ungeladenen Kondensator und zum anderen einen vorgeladenen Kondensator mit $u_{C}(0ms) = 10V$.
+\end{task}
+
+Wir stellen unsere Simulation der Aufgabe entsprechend mit folgenden Werten für den Schalter
+\begin{itemize}
+  \item ttrans = $1\mu s$
+  \item tClose = 0ms
+  \item Rclosed = $0,01\Omega$
+  \item Ropen = $1M\Omega$
+\end{itemize}
+und für die Transient Analysis
+\begin{itemize}
+  \item Print step = 0
+  \item Stop time = 100ms
+  \item Step Ceiling(Timestep) = 0.01
+  \item Skip initial transient solution = disabled(diese Einstellung existiert in LTSpice so nicht mehr)
+\end{itemize}
+ein.
+
+\subsection{Anfangs ungeladener Kondensator $u_C(0ms)=0V$}
+\label{sec:anfangs-ungel-kond}
+
+
+Nach dem Einschalten der Schaltung bei LTSpice ergeben sich folgende Verläufe für Strom und Spannung:
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[scale=0.32]{../assets/images/ET2P5/StromSpannung11.png}
+  \caption{Strom- und Spannungsverlauf der Simulation mit LTSpice von a)}
+\end{center}
+\end{figure}
+\newpage
+
+
+
+Mithilfe der Cursorfunktion ermitteln wir den Wert $\tau_{1} = 20,84ms$:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{../assets/images/ET2P5/Zeitkonstante11.png}
+  \caption{Cursorfunktion zur Ermittlung der Zeitkonstante $\tau_1$}
+  \label{fig:cont11}
+\end{figure}
+
+Wir erkennen damit sehr genau, dass der Zeitverlauf der Kurve ziemlich genau mit der Kurve in der Vorbereitung übereinstimmt, auch die Abweichung der Zeitkonstante $\tau_{1}$ ist sehr gering. Sie entsteht hier durch die annäherung der Schaltereigenschaften in der Simulation, die wir in unserer Rechnung nicht berücksichtigt haben.
+
+
+\subsection{Anfangs geladener Kondensator $u_C(0ms)=10V$}
+\label{sec:anfangs-gelad-kond}
+
+Nach dem Einschalten der Schaltung bei LTSpice ergeben sich folgende Verläufe, die sehr stark an den Verlauf oben erinnern, wobei hier ein Offset von 10V zu bemerken ist:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.32]{../assets/images/ET2P5/StromSpannung12.png}
+  \caption{Strom- und Spannungsverlauf der Simulation mit LTSpice von b)}
+  \label{fig:con12}
+\end{figure}
+
+Mithilfe der Cursorfunktion ermitteln wir wieder erneut die Zeitkonstante $\tau_{2} = 19,48ms$:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{../assets/images/ET2P5/Zeitkonstante12.png}
+  \caption{Cursorfunktion zur Ermittlung der Zeitkonstante $\tau_2$}
+  \label{fig:cont12}
+\end{figure}
+
+Aus der Ermittlung der Zeitkonstanten für den vorgeladenen Kondensator erkennen wir zwar erneut, dass die Zeitkonstante sehr nahe an der theoretisch genutzen Zeitkonstante liegt, jedoch in die negative Richtung abweicht. Das lässt aus der Vorladung des Kondensator herleiten, der dem Prozess des vollständigen Aufladens die Eigenschaft verleiht, weniger Zeit zu brauchen, da schon ein Teil der zu erreichenden Ladung vorhanden ist.
+
+\newpage
+
+\section{Schaltvorgang bei einem Netzwerk mit einem Kondensator (ein Schaltzeitpunkt)}
+\begin{task}
+  T
+  In diesem Versuch wollen wir das Verhalten eines Kondensators in einem Netzwerk untersuchen, der durch einen Schalter gesteuert ist. Dazu verwenden wir LTSpice, um den Sachverhalt so genau wie möglich zu simulieren.
+\end{task}
 \subsection{Simulation der Schaltung}
 \begin{figure}[h]
   \begin{center}
@@ -319,7 +399,13 @@ Daraus ergibt sich:
 \newpage
 
 
-\section{Versuch 3}
+\section{Schaltvorgang bei einem Netzwerk mit einer Spule(zwei Schaltzeitpunkte)}
+\begin{task}
+  In diesem Versuch wollen hier das Verhalten einer Spule in einem Netzwerk untersuchen, die auch wieder von einem Schalter gesteuert wird. Die mathematische Vorbetrachtung wird wieder mit den Simulationsergebnissen verglichen.
+
+
+\end{task}
+
 \subsection{Simulation der Schaltung}
 \begin{figure}[h]
   \begin{center}
@@ -349,29 +435,6 @@ Wenn t1 < 1 gilt für die Spannung:
   u_L(t) &= -780mV\cdot e^{-\frac{t-100\mu s}{111,1\mu s}}
 \end{align*}
 \newpage
-
-\section{Schaltvorgang einer RC-Reihenschaltung}
-
-\begin{task}
-  T
-  In diesem Versuch wollen wir den Schaltvorgang einer RC-Reihenschaltung mithilfe von LTSpice simulieren und anschließend untersuchen. Dazu verwenden wir genau zum einen einen ungeladenen Kondensator und zum anderen einen vorgeladenen Kondensator mit $u_{C}(0ms) = 10V$.
-\end{task}
-
-Wir stellen unsere Simulation der Aufgabe entsprechend mit folgenden Werten für den Schalter
-\begin{itemize}
-  \item ttrans = $1\mu s$
-  \item tClose = 0ms
-  \item Rclosed = $0,01\Omega$
-  \item Ropen = $1M\Omega$
-\end{itemize}
-und für die Transient Analysis
-\begin{itemize}
-  \item Print step = 0
-  \item Stop time = 100ms
-  \item Step Ceiling(Timestep) = 0.01
-  \item Skip initial transient solution = disabled(diese Einstellung existiert in LTSpice so nicht mehr)
-\end{itemize}
-ein.
 
 
 \end{document}
