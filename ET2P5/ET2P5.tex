@@ -289,22 +289,63 @@ Lösen des Stroms nach $200\mu$s:
   i_{L1}(200\mu s) &= 168,69mA
 \end{align*}
 
+\newpage
 \section{Versuch 2}
+\subsection{Simulation der Schaltung}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../assets/images/ET2P5/aufgabe 2 u von t und i von t.JPG}
+    \caption{Zeiltiche Verläufe von $U_L$ und $I_L$}
+  \end{center}
+\end{figure}
+
+\subsection{Bestimmung von $\tau$}
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.5]{../assets/images/ET2P5/tau log aufgabe 2.JPG}
+    \caption{Bestimmung der Zeitkonstante}
+  \end{center}
+\end{figure}
+Die Spannung wird nun logaritmisch dargestellt. Nun werden mittels der Cursor-Funktion zwei Zeitpunkte zu jeweils einer Dekade ermittelt.
+Daraus ergibt sich:
+\begin{align*}
+  \tau &= \frac{t_2-t_1}{ln(10)}\\
+  \tau &= \frac{1,36ms - 668,5\mu s}{ln (10)}\\
+  \tau &= 300\mu s
+\end{align*}
+
+
+\newpage
+
 
 \section{Versuch 3}
+\subsection{Simulation der Schaltung}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{../assets/images/ET2P5/aufgabe 3 u von t und i von t.JPG}
+    \caption{Zeiltiche Verläufe von $U_L$ und $I_L$}
+  \end{center}
+\end{figure}
+
+\subsection{Vergleich der berechneten Werte}
+
+Die Kurven entsprechen den Erwartungen und es lassen sich die vorher berechneten Kenngrößen wiederfinden.
+
+\subsection{Ermittlung der Spannung $u_L$}
 
 Gleichung der Spannung über der Induktivität:
 
 Für den Zeitbereich t0 < t < t1 gilt:
 \begin{align*}
-  u_L(t) = 6V e^{-\frac{t}{40\mu s}}\cdot 
+  u_L(t) = 6V\cdot e^{-\frac{t}{40\mu s}}\cdot 
 \end{align*}
 Wenn t1 < 1 gilt für die Spannung:
 
 \begin{align*}
-  u_L(t) &= L\cdot \frac{\delta i}{\delta t}\\
-  u_L(t) &= L\cdot (133,33mA + 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\frac{\delta i}{\delta t}\\
-  u_L(t) &= 1mH\cdot (-\frac{1}{111,1\mu s}\cdot 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\\
+  u_L(t) &= L\cdot \frac{\mathrm{d} i}{\mathrm{d} t}\\
+  u_L(t) &= L\cdot (133,33mA + 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\frac{\mathrm{d} i}{\mathrm{d} t}\\
+  u_L(t) &= 1mH\cdot \left(-\frac{1}{111,1\mu s}\cdot 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}}\right)\\
   u_L(t) &= -780mV\cdot e^{-\frac{t-100\mu s}{111,1\mu s}}
 \end{align*}
 \newpage
