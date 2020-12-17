@@ -357,5 +357,21 @@ Wenn t1 < 1 gilt für die Spannung:
   In diesem Versuch wollen wir den Schaltvorgang einer RC-Reihenschaltung mithilfe von LTSpice simulieren und anschließend untersuchen. Dazu verwenden wir genau zum einen einen ungeladenen Kondensator und zum anderen einen vorgeladenen Kondensator mit $u_{C}(0ms) = 10V$.
 \end{task}
 
+Wir stellen unsere Simulation der Aufgabe entsprechend mit folgenden Werten für den Schalter
+\begin{itemize}
+  \item ttrans = $1\mu s$
+  \item tClose = 0ms
+  \item Rclosed = $0,01\Omega$
+  \item Ropen = $1M\Omega$
+\end{itemize}
+und für die Transient Analysis
+\begin{itemize}
+  \item Print step = 0
+  \item Stop time = 100ms
+  \item Step Ceiling(Timestep) = 0.01
+  \item Skip initial transient solution = disabled(diese Einstellung existiert in LTSpice so nicht mehr)
+\end{itemize}
+ein.
+
 
 \end{document}
