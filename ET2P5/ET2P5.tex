@@ -285,10 +285,28 @@ Da sich die Spule ab t = $100\mu s$ wieder entlädt gilt:
 
 Lösen des Stroms nach $200\mu$s:
 \begin{align*}
-  i_{L1}(t=200\mu s) &= 133,33mA + 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})
+  i_{L1}(t=200\mu s) &= 133,33mA + 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\\
   i_{L1}(200\mu s) &= 168,69mA
 \end{align*}
 
+\section{Versuch 2}
+
+\section{Versuch 3}
+
+Gleichung der Spannung über der Induktivität:
+
+Für den Zeitbereich t0 < t < t1 gilt:
+\begin{align*}
+  u_L(t) = 6V e^{-\frac{t}{40\mu s}}\cdot 
+\end{align*}
+Wenn t1 < 1 gilt für die Spannung:
+
+\begin{align*}
+  u_L(t) &= L\cdot \frac{\delta i}{\delta t}\\
+  u_L(t) &= L\cdot (133,33mA + 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\frac{\delta i}{\delta t}\\
+  u_L(t) &= 1mH\cdot (-\frac{1}{111,1\mu s}\cdot 86,67mA\cdot e^{-\frac{t-100\mu s}{111,1\mu s}})\\
+  u_L(t) &= -780mV\cdot e^{-\frac{t-100\mu s}{111,1\mu s}}
+\end{align*}
 \newpage
 
 \section{Schaltvorgang einer RC-Reihenschaltung}
