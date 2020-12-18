@@ -156,8 +156,8 @@
 
 \begin{devlist}
   T\begin{itemize}
-    \item Oszilloskop: Tektronix MDO3012
-    \item Funktionsgenerator
+    \item X-Y-Schreiber
+    \item Gleichspannungsgenerator
     \item AA138 Germaniumdiode
     \item 1N4148 Siliziumdiode
   \end{itemize}
@@ -188,10 +188,20 @@
 Wir messen mithilfe des X-Y-Schreibers, wie im Versuchsaufbau gezeigt, den Strom über die Diode indirekt mithilfe der Spannung 
 über den Vorwiderstand (Shunt). Die Spannung über die Diode messen wir einfach direkt mit den X-Eingängen des Schreibers. Den Strom durch den Schaltkreis regeln wir bis zu einem Stromfluss von 10mA hoch und nehmen dabei die 
 Kennlinie der jeweiligen Diode auf.
-
+\newpage
 \subsection{Auswertung}
 
 Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und bestimmen daraus die Steigung und damit den differentiellen Widerstand der Diode:
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4, angle=-90]{../assets/images/EL1P2/ScanXY.PDF}
+  \caption{Ergebnis des Aufnehmen der Kennlinie mit dem XY-Schreiber. (Blau 1N4148, Schwarz AA138)}
+  \label{fig:xy}
+\end{figure}
+
+Wir erkennen, dass die Diodenkennlinie der Siliziumdiode um einiges stärker definiert ist und ihre Vorwärtspannung ab einem bestimmten Punkt einen stark expotentiellen Verlauf annimmt. Das ist auch mit ein Grund, warum Germaniumdioden heutzutage einen weitaus geringeren Stellenwert haben als Siliziumdioden, da sich Siliziumdioden besser vorhersagen und am Computer quantisieren lassen. Für die Siliziumdiode erhalten wir einen differentiellen Leitwert von $$G_{Si_{d}}= \frac{2mA-0,2mA}{0,6V-0,5V} = \frac{1,8mA}{0,1V} = 0,018S$$, also $$r_{Si_{d}} = \frac{1}{G_{Si_{d}}} = \frac{1}{0,018S} = 55,5\Omega.$$
+Für die Germaniumdiode bekommen wir mit der Grafik nun einen differentiellen Leitwert von $$G_{Ge_{d}} = \frac{2mA-1,5mA}{0,4V-0,3V} = \frac{0,5mA}{0,1V} = 0,005S$$, also $$r_{Ge_{d}} = \frac{1}{G_{Ge_{d}}} = \frac{1}{0,005S} = 200\Omega.$$
+
 
 \newpage
 
@@ -214,14 +224,22 @@ Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und best
 
 \begin{devlist}
   T\begin{itemize}
-    \item Oszilloskop
-    \item Funktionsgenerator
-    \item AA138 Germaniumdiode
+    \item Multimeter MetraHit X-TRA
+    \item Gleichstromgenerator
     \item 1N4148 Siliziumdiode
   \end{itemize}
 \end{devlist}
 \newpage
 \subsection{Vorbereitung}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{../assets/images/EL1P2/VorbereitungSemilogDiode2.png}
+  \caption{Semilogarithmische Darstellung der Shockleygleichung mit Matlab}
+  \label{fig:vsemilog}
+\end{figure}
+
+Mithilfe von Matlab und der Shockleygleichung lässt sich eine halblogarithmische Darstellung der Diodenkennlinie erstellen, die man hier als stark linear erkennen kann.
 
 \subsection{Versuchsdurchführung}
 
@@ -260,12 +278,18 @@ Wir lassen die Schaltung aus Aufgabe 1 weitesgehend aufgebaut und legen jetzt an
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/SemilogDiode2.png}
+    \includegraphics[scale=0.6]{../assets/images/EL1P2/SemilogDiodeVergleich.png}
     \caption{Semilogarithmische Darstellung der Diodenkennlinie mit Matlab}
   \end{center}
 \end{figure}
 
+Hier ist nun die Diodenkennlinie aus der Vorbereitung mit der neuen Kennlinie aus den Messwerten (orange) dargestellt.
+\newpage
 \subsection{Auswertung}
+
+Es ist interessant, dass sowohl die Diodengleichung als auch die Messergebnisse zu sehr ähnlichen Grafiken führen, die nahezu linear sind. Dies ist jedoch nicht sehr verwunderlich, da in der Shockleygleichung auch ein Term mit $e$ vorkommt. Der Versatz, der sich zwischen beiden Kennlinie ergibt, kann aus vielen Faktoren entstanden seien, die aus der empfindlichen Art der Diode entstehen können. Dadurch, dass Halbleiterelemente zudem sehr temperaturabhängig sind, kann auch die Raumtemperatur des Labors eine Rollen spielen.
+
+\newpage
 
 \section{Einweggleichrichterschaltung}
 \begin{task}
