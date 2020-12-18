@@ -277,39 +277,94 @@ Wir lassen die Schaltung aus Aufgabe 1 weitesgehend aufgebaut und legen jetzt an
   T\begin{itemize}
     \item Oszilloskop
     \item Funktionsgenerator
-    \item AA138 Germaniumdiode
+    \item Multimeter
+    \item Lastwiderstand
+    \item Kondensator
     \item 1N4148 Siliziumdiode
   \end{itemize}
 \end{devlist}
 
-\subsection{Vorbereitung}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics{../assets/images/EL1P2/aufgabe 3 schaltung.JPG}
+    \caption{Einweggleichrichterschaltung mit Glättungskondensator}
+  \end{center}
+\end{figure}
 
-\subsection{Versuchsdurchführung}
-$U1 47nF$:
-Wechseleffektivwert: 7,053V
-Gesamteffektivwert: 7,053V
-Gleichanteil: -0,5V
+\subsection{Darstellung der Zeitverläufe von $U_1$ und $U_2$}
 
-$U2 47nF$:
-Wechseleffektivwert:2,42V
-Gesamteffektivwert: 5,681V
-Gleichanteil:5.151
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 3 47n.JPG}
+    \caption{Spannungsverlauf bei $C_L$ = 47nF}
+  \end{center}
+\end{figure}
 
-$U1 470nF$:
-Wechseleffektivwert: 7,053V
-Gesamteffektivwert: 7,053V
-Gleichanteil: -0,5V
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 3 470n.JPG}
+    \caption{Spannungsverlauf bei $C_L$ = 470nF}
+  \end{center}
+\end{figure}
 
-$U2 470nF$:
-Wechseleffektivwert:1,756V
-Gesamteffektivwert: 6,63V
-Gleichanteil:6,414
+\newpage
 
+\subsection{Messung von Gesamteffektivwert, Wechseleffektivwert und des Mittelwertes von $U_1$ und $U_2$}
 
+\begin{table}[h]
+  \begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  & $U_{1}$ & $U_{2}$  \\
+  \hline
+  U\raisebox{-0.9ex}{\~{}} & 7,053V & 2,42V\\
+  \hline
+  $U_{TRMS}$ & 7,053V&5,681V\\
+  \hline
+  $U_{DC}$ & -0.5V&5,151V\\
+  \hline
+\end{tabular}
+\caption{Messwerte bei $C_L$ = 47nF}
+\end{center}
+\end{table}
 
+\begin{table}[h]
+  \begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  & $U_{1}$ & $U_{2}$  \\
+  \hline
+  U\raisebox{-0.9ex}{\~{}} & 7,053V & 1,756V\\
+  \hline
+  $U_{TRMS}$ & 7,053V & 6,63V\\
+  \hline
+  $U_{DC}$ & -0.5V  & 6,414\\
+  \hline
+\end{tabular}
+\caption{Messwerte bei $C_L$ = 470nF}
+\end{center}
+\end{table}
 
+\subsection{Welligkeit von $U_2$}
 
-\subsection{Auswertung}
+Die Welligkeit ist definiert als das Verhältnis vom Effektivwert des Wechselanteils U\raisebox{-0.9ex}{\~{}} zum Betrag des Gleichanteils $U_{DC}$:
+
+\begin{align*}
+  r_u = \frac{U\raisebox{-0.9ex}{\~{}}}{|U_{DC}|}
+\end{align*}
+
+Für $C_L$ = 47nF gilt ergibt sich folgende Welligkeit der Spannung:
+\begin{align*}
+  r_u = \frac{2,42V}{5,151V} = 0,47
+\end{align*}
+Und für $C_L$ = 470nF:
+\begin{align*}
+  r_u = \frac{1,756V}{6,414V} = 0,27
+\end{align*}
+
+Je kleiner die Welligkeit, desto stärker die Glättung des Signals. Diese Glättung ist abhängig von der Kapazität des Kondensators, je größer sie ist, desto besser die Glättung und kleiner die Welligkeit.
+\\ In der Nachbereitung ist aufgefallen, dass die gemessenen Spannungen bei $U_2$ für $C_L$ = 470nF zu gering sind. Dies kann an der Auswahl eines falschen Kondensators liegen.
+Dennoch lässt sich trotzdem erkennen, dass die Werte größer sind als bei der kleineren Kapazität.
 
 \section{Zweiweggleichrichterschaltung}
 
@@ -322,37 +377,94 @@ Gleichanteil:6,414
   T\begin{itemize}
     \item Oszilloskop
     \item Funktionsgenerator
-    \item AA138 Germaniumdiode
+    \item Multimeter
+    \item Lastwiderstand
+    \item Kondensator
     \item 1N4148 Siliziumdiode
   \end{itemize}
 \end{devlist}
 
-\subsection{Vorbereitung}
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics{../assets/images/EL1P2/aufgabe 4 schaltung.JPG}
+    \caption{Zweiweggleichrichterschaltung}
+  \end{center}
+\end{figure}
 
-\subsection{Versuchsdurchführung}
+\newpage
 
+\subsection{Darstellung der Zeitverläufe von $U_1$ und $U_2$}
 
-$U1 47nF$:
-Wechseleffektivwert: 7,012V
-Gesamteffektivwert: 7,012V
-Gleichanteil: -0,53V
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.7]{../assets/images/EL1P2/aufgabe 4 47n.JPG}
+    \caption{Spannungsverlauf bei $C_L$ = 47nF}
+  \end{center}
+\end{figure}
 
-$U2 47nF$:
-Wechseleffektivwert:1,441V
-Gesamteffektivwert: 7,42V
-Gleichanteil:7,382V
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 4 470n.JPG}
+    \caption{Spannungsverlauf bei $C_L$ = 470nF}
+  \end{center}
+\end{figure} 
 
-$U1 470nF$:
-Wechseleffektivwert: 7V
-Gesamteffektivwert: 7V
-Gleichanteil: -0,5V
+\newpage
 
-$U2 470nF$:
-Wechseleffektivwert: 0,21V
-Gesamteffektivwert: 8,172V
-Gleichanteil: 8,174V
-\subsection{Auswertung}
+\subsection{Messung von Gesamteffektivwert, Wechseleffektivwert und des Mittelwertes von $U_1$ und $U_2$}
 
+\begin{table}[h]
+  \begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  & $U_{1}$ & $U_{2}$  \\
+  \hline
+  U\raisebox{-0.9ex}{\~{}} & 7,012V & 1,441V\\
+  \hline
+  $U_{TRMS}$ & 7,012V&7,42V\\
+  \hline
+  $U_{DC}$ & -0.53V&7,382V\\
+  \hline
+\end{tabular}
+\caption{Messwerte bei $C_L$ = 47nF}
+\end{center}
+\end{table}
 
+\begin{table}[h]
+  \begin{center}
+\begin{tabular}{|c|c|c|}
+  \hline
+  & $U_{1}$ & $U_{2}$  \\
+  \hline
+  U\raisebox{-0.9ex}{\~{}} & 7,012V & 0,21V\\
+  \hline
+  $U_{TRMS}$ & 7,012V & 8,172V\\
+  \hline
+  $U_{DC}$ & -0.53V  & 8,172V\\
+  \hline
+\end{tabular}
+\caption{Messwerte bei $C_L$ = 470nF}
+\end{center}
+\end{table}
+
+\subsection{Welligkeit von $U_2$}
+
+Ganz analog zu Versuch 3 wird nun wieder die Welligkeit bestimmt:
+
+\begin{align*}
+  r_u = \frac{U\raisebox{-0.9ex}{\~{}}}{|U_{DC}|}
+\end{align*}
+
+Für $C_L$ = 47nF gilt ergibt sich folgende Welligkeit der Spannung:
+\begin{align*}
+  r_u = \frac{1,441V}{7,382} = 0,2
+\end{align*}
+Und für $C_L$ = 470nF:
+\begin{align*}
+  r_u = \frac{0,21}{8,172} = 0,026
+\end{align*}
+
+Im Vergleich zur Einweggleichrichterschaltung ergibt sich eine noch geringere Welligkeit und damit ein noch besseres gleichgerichtetes Signal.
+Durch die Verschaltung von vier Dioden kommt es zu keinem Zeitpunkt zu einer kompletten Sperrung der Quellspannung $U_1$.
 
 \end{document}
