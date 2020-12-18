@@ -214,14 +214,22 @@ Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und best
 
 \begin{devlist}
   T\begin{itemize}
-    \item Oszilloskop
-    \item Funktionsgenerator
-    \item AA138 Germaniumdiode
+    \item Multimeter MetraHit X-TRA
+    \item Gleichstromgenerator
     \item 1N4148 Siliziumdiode
   \end{itemize}
 \end{devlist}
 \newpage
 \subsection{Vorbereitung}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{../assets/images/EL1P2/VorbereitungSemilogDiode2.png}
+  \caption{Semilogarithmische Darstellung der Shockleygleichung mit Matlab}
+  \label{fig:vsemilog}
+\end{figure}
+
+Mithilfe von Matlab und der Shockleygleichung lässt sich eine halblogarithmische Darstellung der Diodenkennlinie erstellen, die man hier als stark linear erkennen kann.
 
 \subsection{Versuchsdurchführung}
 
@@ -260,12 +268,18 @@ Wir lassen die Schaltung aus Aufgabe 1 weitesgehend aufgebaut und legen jetzt an
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/SemilogDiode2.png}
+    \includegraphics[scale=0.6]{../assets/images/EL1P2/SemilogDiodeVergleich.png}
     \caption{Semilogarithmische Darstellung der Diodenkennlinie mit Matlab}
   \end{center}
 \end{figure}
 
+Hier ist nun die Diodenkennlinie aus der Vorbereitung mit der neuen Kennlinie aus den Messwerten (orange) dargestellt.
+\newpage
 \subsection{Auswertung}
+
+Es ist interessant, dass sowohl die Diodengleichung als auch die Messergebnisse zu sehr ähnlichen Grafiken führen, die nahezu linear sind. Dies ist jedoch nicht sehr verwunderlich, da in der Shockleygleichung auch ein Term mit $e$ vorkommt. Der Versatz, der sich zwischen beiden Kennlinie ergibt, kann aus vielen Faktoren entstanden seien, die aus der empfindlichen Art der Diode entstehen können. Dadurch, dass Halbleiterelemente zudem sehr temperaturabhängig sind, kann auch die Raumtemperatur des Labors eine Rollen spielen.
+
+\newpage
 
 \section{Einweggleichrichterschaltung}
 \begin{task}
