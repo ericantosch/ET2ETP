@@ -156,8 +156,8 @@
 
 \begin{devlist}
   T\begin{itemize}
-    \item Oszilloskop: Tektronix MDO3012
-    \item Funktionsgenerator
+    \item X-Y-Schreiber
+    \item Gleichspannungsgenerator
     \item AA138 Germaniumdiode
     \item 1N4148 Siliziumdiode
   \end{itemize}
@@ -198,6 +198,10 @@ Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und best
   \caption{Ergebnis des Aufnehmen der Kennlinie mit dem XY-Schreiber. (Blau 1N4148, Schwarz AA138)}
   \label{fig:xy}
 \end{figure}
+
+Wir erkennen, dass die Diodenkennlinie der Siliziumdiode um einiges stärker definiert ist und ihre Vorwärtspannung ab einem bestimmten Punkt einen stark expotentiellen Verlauf annimmt. Das ist auch mit ein Grund, warum Germaniumdioden heutzutage einen weitaus geringeren Stellenwert haben als Siliziumdioden, da sich Siliziumdioden besser vorhersagen und am Computer quantisieren lassen. Für die Siliziumdiode erhalten wir einen differentiellen Leitwert von $$G_{Si_{d}}= \frac{2mA-0,2mA}{0,6V-0,5V} = \frac{1,8mA}{0,1V} = 0,018S$$, also $$r_{Si_{d}} = \frac{1}{G_{Si_{d}}} = \frac{1}{0,018S} = 55,5\Omega.$$
+Für die Germaniumdiode bekommen wir mit der Grafik nun einen differentiellen Leitwert von $$G_{Ge_{d}} = \frac{2mA-1,5mA}{0,4V-0,3V} = \frac{0,5mA}{0,1V} = 0,005S$$, also $$r_{Ge_{d}} = \frac{1}{G_{Ge_{d}}} = \frac{1}{0,005S} = 200\Omega.$$
+
 
 \newpage
 
