@@ -152,6 +152,9 @@
 \subsection{Ausgangskennlinie}
 \label{sec:ausgangskennlinie}
 
+\subsubsection{Vorbereitung}
+
+
 Wir wollen zunächst das Ausgangskennlinienfeld des Transistors bestimmen. Dazu messen wir $I_{C} = 0...2mA$ und $U_{CE} = 0...10V$ für mindestens 5 verschiedene Basisströme und tragen diese
 in LTSpice ab. Für die Basisströme benutzen wir eine variable Spannungsquelle mit einem hochohmigen Vorwiderstand aus der E24-Reihe. Wir wissen aus dem Datenblatt des BC546A, dass die Stromverstärkung bei ca. $B=200$ liegt, wir rechnen also:
 \begin{equation}
@@ -164,48 +167,61 @@ Wir wählen nun eine Spannungsquelle mit einem Maximum von 10V. Um das Maximum v
   R_{V} = \frac{U_{0}-U_{BE}}{I_{B}} = \frac{10V-0,7V}{10\mu A} = 930k\Omega.
 \end{equation}
 
-Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem li
-\newpage
-
-\subsection{Vorbereitung}
+\subsubsection{Durchführung}
+Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem linearen Inkrement von $\Delta I = 10\mu A$. Den Basisstrom nehmen wir für die Werte 2V, 4V, 5V, 6V, 8V und 10V auf und stellen den in einem Kennlinienfeld dar.
 
 \begin{figure}[h]
   \centering
-  \begin{subfigure}[b]{0.4\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/images/EL1P2/VorbereitungAA138.png}
-    \caption{Kennlinie der AA138 Germaniumdiode}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.4\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/images/EL1P2/Vorbereitung1N4148.png}
-    \caption{Kennlinie der 1N4148 Siliziumdiode}
-  \end{subfigure}
-  \caption{Die beiden Kennlinien der Dioden simuliert mit Shockley in Matlab}
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/ausgangskennlinie.png}
+  \caption{Ausgangskennlinie der Messschaltung mit verschiedenen Basisströmen}
+  \label{fig:ausgang}
 \end{figure}
 
-\subsection{Versuchsdurchführung}
+\subsubsection{Auswertung}
 
-Wir messen mithilfe des X-Y-Schreibers, wie im Versuchsaufbau gezeigt, den Strom über die Diode indirekt mithilfe der Spannung 
-über den Vorwiderstand (Shunt). Die Spannung über die Diode messen wir einfach direkt mit den X-Eingängen des Schreibers. Den Strom durch den Schaltkreis regeln wir bis zu einem Stromfluss von 10mA hoch und nehmen dabei die 
-Kennlinie der jeweiligen Diode auf.
+Wir lesen nun aus der Abbildung (\ref{fig:ausgang}) den Wert von $I_{C} = 2mA$ an der Stelle $U_{CE} = 5V$ und einem Basisstrom $I_{B} = 10\mu A$. Aus
+\begin{equation}
+  \label{eq:3}
+  B = \frac{I_{C}}{I_{B}} = \frac{2mA}{10\mu A} = 200.
+\end{equation}
+
+folgt, dass unsere ermittelte Stromverstärkung der erwarteten Stromverstärkung aus dem Datenblatt bzw. der Vorbereitung enspricht. Um nun die Early-Spannung zu ermitteln, nutzen wir die Cursorfunktion von LTSpice und legen ein Steigungsdreieck an eine der Kennlinien an (wir haben uns für $I_{B} = 2\mu A$ entschieden). Zwischen $U_{CE} = 1V...2V$ ist eine Steigung von $m = 1,818\cdot 10^{-6}$ festzustellen. Von $f_{I_{B1}}(U_{CE}) = f_{2\mu A}(1V) = 233,1964\mu A$ ausgehend bestimmen wir nun den Schnittpunkt der angelegten Geraden mit der X-Achse im Negativen:
+\begin{equation}
+  \label{eq:4}
+  0 = 1,818\cdot 10^{-6}\cdot x + 231,3784\mu A
+\end{equation}
+Nach dem wir nun die Gleichung nach $x$ auflösen, erhalten wir den Wert $x = -127,27$. Dies ist der Wert der Early-Spannung $U_{A} = -127,27V$.
 \newpage
-\subsection{Auswertung}
 
-Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und bestimmen daraus die Steigung und damit den differentiellen Widerstand der Diode:
+\subsection{Übertragungskennlinie}
+\label{sec:ubertr}
+
+Als nächstes wollen wir das Übertragungskennliniefeld des Transistors messen. Wir halten nun die Spannungs $U_{CE} = 5V$ fest und variieren nur noch den Basisstrom zwischen $I_{B} = 0...10\mu A$. Dabei bleibt die Messchaltung beinahe identisch.
+
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4, angle=-90]{../assets/images/EL1P2/ScanXY.PDF}
-  \caption{Ergebnis des Aufnehmen der Kennlinie mit dem XY-Schreiber. (Blau 1N4148, Schwarz AA138)}
-  \label{fig:xy}
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/uebertragungskennlinie.png}
+  \caption{Übertragungskennlinienfeld der Messchaltung}
+  \label{fig:uebertragungskennlinie}
 \end{figure}
 
-Wir erkennen, dass die Diodenkennlinie der Siliziumdiode um einiges stärker definiert ist und ihre Vorwärtspannung ab einem bestimmten Punkt einen stark expotentiellen Verlauf annimmt. Das ist auch mit ein Grund, warum Germaniumdioden heutzutage einen weitaus geringeren Stellenwert haben als Siliziumdioden, da sich Siliziumdioden besser vorhersagen und am Computer quantisieren lassen. Für die Siliziumdiode erhalten wir einen differentiellen Leitwert von $$G_{Si_{d}}= \frac{2mA-0,2mA}{0,6V-0,5V} = \frac{1,8mA}{0,1V} = 0,018S$$, also $$r_{Si_{d}} = \frac{1}{G_{Si_{d}}} = \frac{1}{0,018S} = 55,5\Omega.$$
-Für die Germaniumdiode bekommen wir mit der Grafik nun einen differentiellen Leitwert von $$G_{Ge_{d}} = \frac{2mA-1,5mA}{0,4V-0,3V} = \frac{0,5mA}{0,1V} = 0,005S$$, also $$r_{Ge_{d}} = \frac{1}{G_{Ge_{d}}} = \frac{1}{0,005S} = 200\Omega.$$
+\subsubsection{Auswertung}
 
+Wir wollen nun die Steilheit an dem Punkt $I_{C} = 1mA$ bestimmen. Dazu legen wir mit der Cursorfunktion von LTSpice an den Punkt ein Steigungsdreieck an und lesen den gegebenen Wert ab. Es ergibt sich ein Wert von $r_{d} = 0,0383771\Omega$.
 
 \newpage
+
+\subsection{Steuerkennlinie}
+\label{sec:steuerkennlinie}
+
+Zum Schluss wollen wir nun auch die Steuerkennlinie betrachten. Dazu nutzen wir erneut die gleiche Schaltung wie in den letzten beiden Messungen, wobei wir nun $I_{B}$ gegen $I_{C}$ abtragen. Auch hier halten wir $U_{CE} = 5V$ fest, während $I_{B} = 0...10\mu A$ variiert. Das Ergebnis halten wir in einem Plot fest, der eine beinahe lineare Auslenkung besitzt.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/steuerkennlinie.png}
+  \caption{Steuerkennlinie des Messschaltung}
+  \label{fig:steuer}
+\end{figure}
 
 \section{Durchlasskennlinien der Siliziumdiode in halblogarithmischer Darstellung}
 \begin{task}
