@@ -137,32 +137,34 @@
 \newpage
 
 
-\section{Durchlasskennlinien von Germanium- und Siliziumdiode}
+\section{Kennlinie eines npn-Transistors}
 \begin{task}
-  TIn der ersten Aufgabe wollen wir die Kennlinien einer AA138 Germaniumdiode
-  und einer 1N4148 Siliziumdiode mithilfe des X-Y-Schreibers des Oszilloskops aufnehmen.
+  TBei dieser Aufgabe sollen die Kennlinienfelder eines BC546A npn-Transistors mithilfe von LTSpice simuliert und analysiert werden. Dazu sollen bestimmte Kenndaten aus den Kennlinienfeldern rausgelesen werden.
 \end{task}
 
 \begin{figure}[h]
-  \begin{center}
-    \begin{circuitikz}[european]
-      \draw (0,0) to[vsource, l=$U_0$] (0,4) to[diode, l_=$D$] (4,4) to[R, l_=$R_v$] (4,0) to[short] (0,0);
-      \draw (1,4) to[short] (1,5) to[voltmeter, l=$U_x$] (3,5) to[short] (3,4);
-      \draw (4,3) to[short] (5,3) to[voltmeter, l=$U_y$] (5,1) to[short] (4,1);
-    \end{circuitikz}
-    \caption{Aufbauzeichnung der Messung mithilfe des X-Y-Schreibers}
-  \end{center}
+  \centering
+  \includegraphics[scale=0.76]{../assets/images/EL1P3/Schaltplan1.png}
+  \caption{Schaltplan zur Messung der Kennlinienfelder}
+  \label{fig:schalt1}
 \end{figure}
 
-\begin{devlist}
-  T\begin{itemize}
-    \item X-Y-Schreiber
-    \item Gleichspannungsgenerator
-    \item AA138 Germaniumdiode
-    \item 1N4148 Siliziumdiode
-  \end{itemize}
-\end{devlist}
+\subsection{Ausgangskennlinie}
+\label{sec:ausgangskennlinie}
 
+Wir wollen zunächst das Ausgangskennlinienfeld des Transistors bestimmen. Dazu messen wir $I_{C} = 0...2mA$ und $U_{CE} = 0...10V$ für mindestens 5 verschiedene Basisströme und tragen diese
+in LTSpice ab. Für die Basisströme benutzen wir eine variable Spannungsquelle mit einem hochohmigen Vorwiderstand aus der E24-Reihe. Wir wissen aus dem Datenblatt des BC546A, dass die Stromverstärkung bei ca. $B=200$ liegt, wir rechnen also:
+\begin{equation}
+  \label{eq:1}
+  I_{B} = \frac{I_{CE}}{B} = \frac{2mA}{200} = 10\mu A.
+\end{equation}
+Wir wählen nun eine Spannungsquelle mit einem Maximum von 10V. Um das Maximum von $I_{B} = 10\mu A$ zu bekommen, wollen wir nun den Vorwiderstand unter Berücksichtigung von $U_{BE} = 0,7V$ bestimmen:
+\begin{equation}
+  \label{eq:2}
+  R_{V} = \frac{U_{0}-U_{BE}}{I_{B}} = \frac{10V-0,7V}{10\mu A} = 930k\Omega.
+\end{equation}
+
+Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem li
 \newpage
 
 \subsection{Vorbereitung}
