@@ -167,331 +167,61 @@ Wir wählen nun eine Spannungsquelle mit einem Maximum von 10V. Um das Maximum v
 Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem li
 \newpage
 
-\subsection{Vorbereitung}
+\section{Verstärker in Emitterschaltung}
 
-\begin{figure}[h]
-  \centering
-  \begin{subfigure}[b]{0.4\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/images/EL1P2/VorbereitungAA138.png}
-    \caption{Kennlinie der AA138 Germaniumdiode}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.4\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/images/EL1P2/Vorbereitung1N4148.png}
-    \caption{Kennlinie der 1N4148 Siliziumdiode}
-  \end{subfigure}
-  \caption{Die beiden Kennlinien der Dioden simuliert mit Shockley in Matlab}
-\end{figure}
-
-\subsection{Versuchsdurchführung}
-
-Wir messen mithilfe des X-Y-Schreibers, wie im Versuchsaufbau gezeigt, den Strom über die Diode indirekt mithilfe der Spannung 
-über den Vorwiderstand (Shunt). Die Spannung über die Diode messen wir einfach direkt mit den X-Eingängen des Schreibers. Den Strom durch den Schaltkreis regeln wir bis zu einem Stromfluss von 10mA hoch und nehmen dabei die 
-Kennlinie der jeweiligen Diode auf.
-\newpage
-\subsection{Auswertung}
-
-Wir legen an die Kennlinien jeweils eine Tangente an die Stelle $y=2mA$ und bestimmen daraus die Steigung und damit den differentiellen Widerstand der Diode:
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.4, angle=-90]{../assets/images/EL1P2/ScanXY.PDF}
-  \caption{Ergebnis des Aufnehmen der Kennlinie mit dem XY-Schreiber. (Blau 1N4148, Schwarz AA138)}
-  \label{fig:xy}
-\end{figure}
-
-Wir erkennen, dass die Diodenkennlinie der Siliziumdiode um einiges stärker definiert ist und ihre Vorwärtspannung ab einem bestimmten Punkt einen stark expotentiellen Verlauf annimmt. Das ist auch mit ein Grund, warum Germaniumdioden heutzutage einen weitaus geringeren Stellenwert haben als Siliziumdioden, da sich Siliziumdioden besser vorhersagen und am Computer quantisieren lassen. Für die Siliziumdiode erhalten wir einen differentiellen Leitwert von $$G_{Si_{d}}= \frac{2mA-0,2mA}{0,6V-0,5V} = \frac{1,8mA}{0,1V} = 0,018S$$, also $$r_{Si_{d}} = \frac{1}{G_{Si_{d}}} = \frac{1}{0,018S} = 55,5\Omega.$$
-Für die Germaniumdiode bekommen wir mit der Grafik nun einen differentiellen Leitwert von $$G_{Ge_{d}} = \frac{2mA-1,5mA}{0,4V-0,3V} = \frac{0,5mA}{0,1V} = 0,005S$$, also $$r_{Ge_{d}} = \frac{1}{G_{Ge_{d}}} = \frac{1}{0,005S} = 200\Omega.$$
-
-
-\newpage
-
-\section{Durchlasskennlinien der Siliziumdiode in halblogarithmischer Darstellung}
 \begin{task}
-  TIn diesem Versuch wollen wir erneut die Kennlinie der 1N4148 Siliziumdiode aufnehmen, wobei wir sowohl mehr Messpunkte als auch 
-  eine halblogarithmische Darstellung wählen.
+  TBei dieser Aufgabe soll ein Operationsverstärker mit dem npn-Transistor BC546A näher untersucht werden.
+  Insbesondere der Einfluss der Eingangsspannung auf den Operationsverstärker wird mit LTSpice analysiert.
 \end{task}
 
 \begin{figure}[h]
-  \begin{center}
-    \begin{circuitikz}[european]
-      \draw (0,0) to[vsource, l=$U_0$] (0,4) to[diode, l_=$D$] (4,4) to[R, l_=$R_v$] (4,0);
-      \draw (0,0) to[ammeter] (4,0);
-      \draw (1,4) to[short, *-] (1,5) to[voltmeter, l=$U_x$] (3,5) to[short, -*] (3,4);
-    \end{circuitikz}
-    \caption{Aufbauzeichnung der Messung mithilfe des MetraHit Tech Multimeter}
-  \end{center}
+  \centering
+  \includegraphics{../assets/images/EL1P3/aufbau aufgabe2.jpg}
+  \caption{Versuchsaufbau}
+  \label{fig:schalt2}
 \end{figure}
 
-\begin{devlist}
-  T\begin{itemize}
-    \item Multimeter MetraHit X-TRA
-    \item Gleichstromgenerator
-    \item 1N4148 Siliziumdiode
-  \end{itemize}
-\end{devlist}
+\subsection{Arbeitspunkteinstellung}
+Für die Arbeitspunkteinstellung wird nur die Gleichspannungsquelle $U_B$ betrachtet und die jeweiligen Maschen ohne Kondensatoren, da diese sich beim Gleichstrom wie unenedliche große Widerstände verhalten.
+Der Kollektorstrom $I_{C0}$ beträgt 2mA.
+
+\begin{align*}
+  &I_B = 10\mu A\\  
+  &I_{R1}=10\cdot I_B = 100\mu A\\
+  &I_{R2}= 9\cdot I_B = 90\mu A\\
+  &U_{R2} = U_{CE} + U_{RE} = 0,7V + (2mA\cdot 1k\Omega) = 2,7V\\
+  &R_{2} = \frac{2,7V}{90\mu A} = 30k\Omega\\
+  &U_{R1} = U_B - U_{R2} = 15V - 2,7V = 12,3V\\
+  &R_{1} = \frac{12,3V}{100\mu A}=123k\Omega
+\end{align*}
+
+Da Widerstände aus der E24-Reihe verwendet werden sollen, wird für $R_1$ 120k eingesetzt. \\
+Die berechneten Werte werden mithilfe von Simulationen in LTSpice überprüft. Es finden sich die berechneten Werte mit minimalen Abweichungen wieder.
+
 \newpage
-\subsection{Vorbereitung}
+\subsection{Wechselspannungsverstärkung}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4]{../assets/images/EL1P2/VorbereitungSemilogDiode2.png}
-  \caption{Semilogarithmische Darstellung der Shockleygleichung mit Matlab}
-  \label{fig:vsemilog}
-\end{figure}
-
-Mithilfe von Matlab und der Shockleygleichung lässt sich eine halblogarithmische Darstellung der Diodenkennlinie erstellen, die man hier als stark linear erkennen kann.
-
-\subsection{Versuchsdurchführung}
-
-Wir lassen die Schaltung aus Aufgabe 1 weitesgehend aufgebaut und legen jetzt an die entsprechenden Stellen Multimeter(MetraHit Tech) an.
-
-\begin{table}[h]
-  \begin{center}
-\begin{tabular}{|c|c|}
-  \hline
-  $I_{f}$ & $U_{f}$  \\
-  \hline
-  $10\mu A$ & 0,396V\\
-  \hline
-  $20\mu A$ & 0,433V\\
-  \hline
-  $50\mu A$ & 0,4761V\\
-  \hline
-  $100\mu A$ & 0,5079V\\
-  \hline
-  $200\mu A$ & 0,5418V\\
-  \hline
-  $500\mu A$ & 0,5873\\
-  \hline
-  $1mA$ &
-          0,6219V\\
-  \hline
-  $2mA$ & 0,6551V\\
-  \hline
-  $5mA$ & 0,7018V\\
-  \hline
-  $10mA$ & 0,7393V\\
-  \hline
-\end{tabular}
-\caption{Messwerte, die mit dem Multimeter aufgenommen wurden in tabellarischer Form}
-\end{center}
-\end{table}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/SemilogDiodeVergleich.png}
-    \caption{Semilogarithmische Darstellung der Diodenkennlinie mit Matlab}
-  \end{center}
-\end{figure}
-
-Hier ist nun die Diodenkennlinie aus der Vorbereitung mit der neuen Kennlinie aus den Messwerten (orange) dargestellt.
-\newpage
-\subsection{Auswertung}
-
-Es ist interessant, dass sowohl die Diodengleichung als auch die Messergebnisse zu sehr ähnlichen Grafiken führen, die nahezu linear sind. Dies ist jedoch nicht sehr verwunderlich, da in der Shockleygleichung auch ein Term mit $e$ vorkommt. Der Versatz, der sich zwischen beiden Kennlinie ergibt, kann aus vielen Faktoren entstanden seien, die aus der empfindlichen Art der Diode entstehen können. Dadurch, dass Halbleiterelemente zudem sehr temperaturabhängig sind, kann auch die Raumtemperatur des Labors eine Rollen spielen.
-
-\newpage
-
-\section{Einweggleichrichterschaltung}
-\begin{task}
-  TIn diesem Versuch wollen wir die Eigenschaften einer Einweggleichrichterschaltung mithilfe der uns 
-  vermittelten Methoden analysieren und auswerten.
-\end{task}
-
-\begin{devlist}
-  T\begin{itemize}
-    \item Oszilloskop
-    \item Funktionsgenerator
-    \item Multimeter
-    \item Lastwiderstand
-    \item Kondensator
-    \item 1N4148 Siliziumdiode
-  \end{itemize}
-\end{devlist}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics{../assets/images/EL1P2/aufgabe 3 schaltung.JPG}
-    \caption{Einweggleichrichterschaltung mit Glättungskondensator}
-  \end{center}
-\end{figure}
-
-\subsection{Darstellung der Zeitverläufe von $U_1$ und $U_2$}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 3 47n.JPG}
-    \caption{Spannungsverlauf bei $C_L$ = 47nF}
-  \end{center}
+  \includegraphics{../assets/images/EL1P3/aufbau 2 2.JPG}
+  \caption{Aufbau in LTSpice}
 \end{figure}
 
 \begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 3 470n.JPG}
-    \caption{Spannungsverlauf bei $C_L$ = 470nF}
-  \end{center}
+  \centering
+  \includegraphics[scale=0.5]{../assets/images/EL1P3/leerlauf aufgabe 2.JPG}
+  \caption{Zeitlicher Verlauf der Leerlaufspannung und Eingangsspannung}
 \end{figure}
 
-\newpage
 
-\subsection{Messung von Gesamteffektivwert, Wechseleffektivwert und des Mittelwertes von $U_1$ und $U_2$}
+Die Leerlaufspannungsverstärkung beträgt $\frac{U_{out}}{U_{in}}=\frac{2,9V}{14,14mV} =190 $
 
-\begin{table}[h]
-  \begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline
-  & $U_{1}$ & $U_{2}$  \\
-  \hline
-  U\raisebox{-0.9ex}{\~{}} & 7,053V & 2,42V\\
-  \hline
-  $U_{TRMS}$ & 7,053V&5,681V\\
-  \hline
-  $U_{DC}$ & -0.5V&5,151V\\
-  \hline
-\end{tabular}
-\caption{Messwerte bei $C_L$ = 47nF}
-\end{center}
-\end{table}
+\subsection{Bestimmung des Ein- und Ausgangswiderstandes (Messung)}
 
-\begin{table}[h]
-  \begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline
-  & $U_{1}$ & $U_{2}$  \\
-  \hline
-  U\raisebox{-0.9ex}{\~{}} & 7,053V & 1,756V\\
-  \hline
-  $U_{TRMS}$ & 7,053V & 6,63V\\
-  \hline
-  $U_{DC}$ & -0.5V  & 6,414\\
-  \hline
-\end{tabular}
-\caption{Messwerte bei $C_L$ = 470nF}
-\end{center}
-\end{table}
+Zur Bestimmung des differentiellen Ausgangswiderstand wird ein Lastwidestand so dimensioniert, dass über ihn genau die Hälfte der Leerlaufspannung abfällt.
+\\ Dies ist ungefähr der Fall bei $R_L = 3k\Omega$\\
+Nun wird das selbe Verfahren für den differentiellen Eingangswiderstand angewendet, dabei wird ein Widerstand direkt an die Quelle U1 in Reihe mit dem Kondensator C1 geschaltet. 
+\\ Hierbei ergibt sich die Hälfte der Leerlaufspannung bei $R = 2,5k\Omega$
 
-\subsection{Welligkeit von $U_2$}
-
-Die Welligkeit ist definiert als das Verhältnis vom Effektivwert des Wechselanteils U\raisebox{-0.9ex}{\~{}} zum Betrag des Gleichanteils $U_{DC}$:
-
-\begin{align*}
-  r_u = \frac{U\raisebox{-0.9ex}{\~{}}}{|U_{DC}|}
-\end{align*}
-
-Für $C_L$ = 47nF gilt ergibt sich folgende Welligkeit der Spannung:
-\begin{align*}
-  r_u = \frac{2,42V}{5,151V} = 0,47
-\end{align*}
-Und für $C_L$ = 470nF:
-\begin{align*}
-  r_u = \frac{1,756V}{6,414V} = 0,27
-\end{align*}
-
-Je kleiner die Welligkeit, desto stärker die Glättung des Signals. Diese Glättung ist abhängig von der Kapazität des Kondensators, je größer sie ist, desto besser die Glättung und kleiner die Welligkeit.
-\\ In der Nachbereitung ist aufgefallen, dass die gemessenen Spannungen bei $U_2$ für $C_L$ = 470nF zu gering sind. Dies kann an der Auswahl eines falschen Kondensators liegen.
-Dennoch lässt sich trotzdem erkennen, dass die Werte größer sind als bei der kleineren Kapazität.
-
-\section{Zweiweggleichrichterschaltung}
-
-\begin{task}
-  TIn dem letzten Versuch wollen wir nun die Eigenschaften einer Zweiweggleichrichterschaltung mithilfe der uns vermittelten
-  Methoden analysieren und auswerten.
-\end{task}
-
-\begin{devlist}
-  T\begin{itemize}
-    \item Oszilloskop
-    \item Funktionsgenerator
-    \item Multimeter
-    \item Lastwiderstand
-    \item Kondensator
-    \item 1N4148 Siliziumdiode
-  \end{itemize}
-\end{devlist}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics{../assets/images/EL1P2/aufgabe 4 schaltung.JPG}
-    \caption{Zweiweggleichrichterschaltung}
-  \end{center}
-\end{figure}
-
-\newpage
-
-\subsection{Darstellung der Zeitverläufe von $U_1$ und $U_2$}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.7]{../assets/images/EL1P2/aufgabe 4 47n.JPG}
-    \caption{Spannungsverlauf bei $C_L$ = 47nF}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[scale=0.6]{../assets/images/EL1P2/aufgabe 4 470n.JPG}
-    \caption{Spannungsverlauf bei $C_L$ = 470nF}
-  \end{center}
-\end{figure} 
-
-\newpage
-
-\subsection{Messung von Gesamteffektivwert, Wechseleffektivwert und des Mittelwertes von $U_1$ und $U_2$}
-
-\begin{table}[h]
-  \begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline
-  & $U_{1}$ & $U_{2}$  \\
-  \hline
-  U\raisebox{-0.9ex}{\~{}} & 7,012V & 1,441V\\
-  \hline
-  $U_{TRMS}$ & 7,012V&7,42V\\
-  \hline
-  $U_{DC}$ & -0.53V&7,382V\\
-  \hline
-\end{tabular}
-\caption{Messwerte bei $C_L$ = 47nF}
-\end{center}
-\end{table}
-
-\begin{table}[h]
-  \begin{center}
-\begin{tabular}{|c|c|c|}
-  \hline
-  & $U_{1}$ & $U_{2}$  \\
-  \hline
-  U\raisebox{-0.9ex}{\~{}} & 7,012V & 0,21V\\
-  \hline
-  $U_{TRMS}$ & 7,012V & 8,172V\\
-  \hline
-  $U_{DC}$ & -0.53V  & 8,172V\\
-  \hline
-\end{tabular}
-\caption{Messwerte bei $C_L$ = 470nF}
-\end{center}
-\end{table}
-
-\subsection{Welligkeit von $U_2$}
-
-Ganz analog zu Versuch 3 wird nun wieder die Welligkeit bestimmt:
-
-\begin{align*}
-  r_u = \frac{U\raisebox{-0.9ex}{\~{}}}{|U_{DC}|}
-\end{align*}
-
-Für $C_L$ = 47nF gilt ergibt sich folgende Welligkeit der Spannung:
-\begin{align*}
-  r_u = \frac{1,441V}{7,382} = 0,2
-\end{align*}
-Und für $C_L$ = 470nF:
-\begin{align*}
-  r_u = \frac{0,21}{8,172} = 0,026
-\end{align*}
-
-Im Vergleich zur Einweggleichrichterschaltung ergibt sich eine noch geringere Welligkeit und damit ein noch besseres gleichgerichtetes Signal.
-Durch die Verschaltung von vier Dioden kommt es zu keinem Zeitpunkt zu einer kompletten Sperrung der Quellspannung $U_1$.
 
 \end{document}
