@@ -167,6 +167,11 @@ Wir wählen nun eine Spannungsquelle mit einem Maximum von 10V. Um das Maximum v
   R_{V} = \frac{U_{0}-U_{BE}}{I_{B}} = \frac{10V-0,7V}{10\mu A} = 930k\Omega.
 \end{equation}
 
+Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem li
+\newpage
+
+
+
 \subsubsection{Durchführung}
 Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem linearen Inkrement von $\Delta I = 10\mu A$. Den Basisstrom nehmen wir für die Werte 2V, 4V, 5V, 6V, 8V und 10V auf und stellen den in einem Kennlinienfeld dar.
 
@@ -223,4 +228,65 @@ Zum Schluss wollen wir nun auch die Steuerkennlinie betrachten. Dazu nutzen wir 
   \label{fig:steuer}
 \end{figure}
 
+<<<<<<< HEAD
+=======
+\section{Durchlasskennlinien der Siliziumdiode in halblogarithmischer Darstellung}
+\begin{task}
+  TBei dieser Aufgabe soll ein Operationsverstärker mit dem npn-Transistor BC546A näher untersucht werden.
+  Insbesondere der Einfluss der Eingangsspannung auf den Operationsverstärker wird mit LTSpice analysiert.
+\end{task}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{../assets/images/EL1P3/aufbau aufgabe2.jpg}
+  \caption{Versuchsaufbau}
+  \label{fig:schalt2}
+\end{figure}
+
+\section{Verstärker in Emitterschaltung}
+
+\subsection{Arbeitspunkteinstellung}
+Für die Arbeitspunkteinstellung wird nur die Gleichspannungsquelle $U_B$ betrachtet und die jeweiligen Maschen ohne Kondensatoren, da diese sich beim Gleichstrom wie unenedliche große Widerstände verhalten.
+Der Kollektorstrom $I_{C0}$ beträgt 2mA.
+
+\begin{align*}
+  &I_B = 10\mu A\\  
+  &I_{R1}=10\cdot I_B = 100\mu A\\
+  &I_{R2}= 9\cdot I_B = 90\mu A\\
+  &U_{R2} = U_{CE} + U_{RE} = 0,7V + (2mA\cdot 1k\Omega) = 2,7V\\
+  &R_{2} = \frac{2,7V}{90\mu A} = 30k\Omega\\
+  &U_{R1} = U_B - U_{R2} = 15V - 2,7V = 12,3V\\
+  &R_{1} = \frac{12,3V}{100\mu A}=123k\Omega
+\end{align*}
+
+Da Widerstände aus der E24-Reihe verwendet werden sollen, wird für $R_1$ 120k eingesetzt. \\
+Die berechneten Werte werden mithilfe von Simulationen in LTSpice überprüft. Es finden sich die berechneten Werte mit minimalen Abweichungen wieder.
+
+\newpage
+\subsection{Wechselspannungsverstärkung}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{../assets/images/EL1P3/aufbau 2 2.JPG}
+  \caption{Aufbau in LTSpice}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{../assets/images/EL1P3/leerlauf aufgabe 2.JPG}
+  \caption{Zeitlicher Verlauf der Leerlaufspannung und Eingangsspannung}
+\end{figure}
+
+
+Die Leerlaufspannungsverstärkung beträgt $\frac{U_{out}}{U_{in}}=\frac{2,9V}{14,14mV} =190 $
+
+\subsection{Bestimmung des Ein- und Ausgangswiderstandes (Messung)}
+
+Zur Bestimmung des differentiellen Ausgangswiderstand wird ein Lastwidestand so dimensioniert, dass über ihn genau die Hälfte der Leerlaufspannung abfällt.
+\\ Dies ist ungefähr der Fall bei $R_L = 3k\Omega$\\
+Nun wird das selbe Verfahren für den differentiellen Eingangswiderstand angewendet, dabei wird ein Widerstand direkt an die Quelle U1 in Reihe mit dem Kondensator C1 geschaltet. 
+\\ Hierbei ergibt sich die Hälfte der Leerlaufspannung bei $R = 2,5k\Omega$
+
+
+>>>>>>> e90a24c2b6e88524fe7cd447c1d04121780d460e
 \end{document}
