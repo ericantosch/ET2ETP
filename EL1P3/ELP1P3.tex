@@ -152,6 +152,9 @@
 \subsection{Ausgangskennlinie}
 \label{sec:ausgangskennlinie}
 
+\subsubsection{Vorbereitung}
+
+
 Wir wollen zunächst das Ausgangskennlinienfeld des Transistors bestimmen. Dazu messen wir $I_{C} = 0...2mA$ und $U_{CE} = 0...10V$ für mindestens 5 verschiedene Basisströme und tragen diese
 in LTSpice ab. Für die Basisströme benutzen wir eine variable Spannungsquelle mit einem hochohmigen Vorwiderstand aus der E24-Reihe. Wir wissen aus dem Datenblatt des BC546A, dass die Stromverstärkung bei ca. $B=200$ liegt, wir rechnen also:
 \begin{equation}
@@ -167,8 +170,65 @@ Wir wählen nun eine Spannungsquelle mit einem Maximum von 10V. Um das Maximum v
 Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem li
 \newpage
 
-\section{Verstärker in Emitterschaltung}
 
+
+\subsubsection{Durchführung}
+Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110k\Omega$ und $R_{V2} = 820k\Omega$ zusammen (siehe (\ref{fig:schalt1})). Wir variieren nun mit DC-Sweep den Wert von $UCE$ zwischen $0V-10V$ in einem linearen Inkrement von $\Delta I = 10\mu A$. Den Basisstrom nehmen wir für die Werte 2V, 4V, 5V, 6V, 8V und 10V auf und stellen den in einem Kennlinienfeld dar.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/ausgangskennlinie.png}
+  \caption{Ausgangskennlinie der Messschaltung mit verschiedenen Basisströmen}
+  \label{fig:ausgang}
+\end{figure}
+
+\subsubsection{Auswertung}
+
+Wir lesen nun aus der Abbildung (\ref{fig:ausgang}) den Wert von $I_{C} = 2mA$ an der Stelle $U_{CE} = 5V$ und einem Basisstrom $I_{B} = 10\mu A$. Aus
+\begin{equation}
+  \label{eq:3}
+  B = \frac{I_{C}}{I_{B}} = \frac{2mA}{10\mu A} = 200.
+\end{equation}
+
+folgt, dass unsere ermittelte Stromverstärkung der erwarteten Stromverstärkung aus dem Datenblatt bzw. der Vorbereitung enspricht. Um nun die Early-Spannung zu ermitteln, nutzen wir die Cursorfunktion von LTSpice und legen ein Steigungsdreieck an eine der Kennlinien an (wir haben uns für $I_{B} = 2\mu A$ entschieden). Zwischen $U_{CE} = 1V...2V$ ist eine Steigung von $m = 1,818\cdot 10^{-6}$ festzustellen. Von $f_{I_{B1}}(U_{CE}) = f_{2\mu A}(1V) = 233,1964\mu A$ ausgehend bestimmen wir nun den Schnittpunkt der angelegten Geraden mit der X-Achse im Negativen:
+\begin{equation}
+  \label{eq:4}
+  0 = 1,818\cdot 10^{-6}\cdot x + 231,3784\mu A
+\end{equation}
+Nach dem wir nun die Gleichung nach $x$ auflösen, erhalten wir den Wert $x = -127,27$. Dies ist der Wert der Early-Spannung $U_{A} = -127,27V$.
+\newpage
+
+\subsection{Übertragungskennlinie}
+\label{sec:ubertr}
+
+Als nächstes wollen wir das Übertragungskennliniefeld des Transistors messen. Wir halten nun die Spannungs $U_{CE} = 5V$ fest und variieren nur noch den Basisstrom zwischen $I_{B} = 0...10\mu A$. Dabei bleibt die Messchaltung beinahe identisch.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/uebertragungskennlinie.png}
+  \caption{Übertragungskennlinienfeld der Messchaltung}
+  \label{fig:uebertragungskennlinie}
+\end{figure}
+
+\subsubsection{Auswertung}
+
+Wir wollen nun die Steilheit an dem Punkt $I_{C} = 1mA$ bestimmen. Dazu legen wir mit der Cursorfunktion von LTSpice an den Punkt ein Steigungsdreieck an und lesen den gegebenen Wert ab. Es ergibt sich ein Wert von $r_{d} = 0,0383771\Omega$.
+
+\newpage
+
+\subsection{Steuerkennlinie}
+\label{sec:steuerkennlinie}
+
+Zum Schluss wollen wir nun auch die Steuerkennlinie betrachten. Dazu nutzen wir erneut die gleiche Schaltung wie in den letzten beiden Messungen, wobei wir nun $I_{B}$ gegen $I_{C}$ abtragen. Auch hier halten wir $U_{CE} = 5V$ fest, während $I_{B} = 0...10\mu A$ variiert. Das Ergebnis halten wir in einem Plot fest, der eine beinahe lineare Auslenkung besitzt.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{../assets/images/EL1P3/steuerkennlinie.png}
+  \caption{Steuerkennlinie des Messschaltung}
+  \label{fig:steuer}
+\end{figure}
+
+\section{Durchlasskennlinien der Siliziumdiode in halblogarithmischer Darstellung}
 \begin{task}
   TBei dieser Aufgabe soll ein Operationsverstärker mit dem npn-Transistor BC546A näher untersucht werden.
   Insbesondere der Einfluss der Eingangsspannung auf den Operationsverstärker wird mit LTSpice analysiert.
@@ -180,6 +240,8 @@ Wir setzen den Wert von $R_{V} = 930k\Omega$ aus den Widerständen $R_{V1} = 110
   \caption{Versuchsaufbau}
   \label{fig:schalt2}
 \end{figure}
+
+\section{Verstärker in Emitterschaltung}
 
 \subsection{Arbeitspunkteinstellung}
 Für die Arbeitspunkteinstellung wird nur die Gleichspannungsquelle $U_B$ betrachtet und die jeweiligen Maschen ohne Kondensatoren, da diese sich beim Gleichstrom wie unenedliche große Widerstände verhalten.
