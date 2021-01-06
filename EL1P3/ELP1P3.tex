@@ -285,6 +285,31 @@ Zur Bestimmung des differentiellen Ausgangswiderstand wird ein Lastwidestand so 
 Nun wird das selbe Verfahren für den differentiellen Eingangswiderstand angewendet, dabei wird ein Widerstand direkt an die Quelle U1 in Reihe mit dem Kondensator C1 geschaltet. 
 \\ Hierbei ergibt sich die Hälfte der Leerlaufspannung bei $R = 2,5k\Omega$
 
+\newpage
 
+\section{Spannungsstabilisierung}
+
+\begin{task}
+  TBei diesem Versuch werden zwei Schaltung hinsichtlich ihrer Spannungsstabilisierung untersucht bei variierenden Lastwiderständen 
+\end{task}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.8]{../assets/images/EL1P3/schaltung 3.JPG}
+  \caption{Versuchsaufbau}
+\end{figure}
+
+\subsection{$U_{out} = f (R_L)$}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{../assets/images/EL1P3/aufgabe 3 u messung.JPG}
+  \caption{Stabilisierte Spannungen der beiden Schaltungen}
+\end{figure}
+
+\subsection{Auswertung}
+Die zeitlichen Verläufe zeigen, dass bei der zweiten Schaltung die Stabilisierung schneller einsetzt, als bei der ersten. Bei kleiner werdenden Lasten ($ca. <100\Omega$) fällt die Spannung der ersten Schaltung exponentiell ab.
+Die Spannung der zweiten Schaltung mit Transistor hingegen, hält ab ca. $20\Omega$ ziemlich konstant seine Spannung.
+Allerdings ist diese immer um mindestens 0,7V niedriger, da ein Teil der Spannung über den Transistor abfällt.\\
+Bei beiden Schaltungen wird die Kennlinie einer Zener-Diode erkennbar. Daher sind Z-Dioden zur Spannungsstabilisierung (geringe Spannungsänderung bei großen Stromänderungen, eindeutige I(U)-Kennlinie) und zur Spannungsbegrenzung geeignet.
 
 \end{document}
