@@ -209,7 +209,7 @@ Als nächstes wollen wir das Übertragungskennliniefeld des Transistors messen. 
 
 \subsubsection{Auswertung}
 
-Wir wollen nun die Steilheit an dem Punkt $I_{C} = 1mA$ bestimmen. Dazu legen wir mit der Cursorfunktion von LTSpice an den Punkt ein Steigungsdreieck an und lesen den gegebenen Wert ab. Es ergibt sich ein Wert von $r_{d} = 0,0383771\Omega$.
+Wir wollen nun die Steilheit an dem Punkt $I_{C} = 1mA$ bestimmen. Dazu legen wir mit der Cursorfunktion von LTSpice an den Punkt ein Steigungsdreieck an und lesen den gegebenen Wert ab. Es ergibt sich ein Wert von $m = 0,0383771$.
 
 \newpage
 
@@ -282,6 +282,23 @@ Zur Bestimmung des differentiellen Ausgangswiderstand wird ein Lastwidestand so 
 Nun wird das selbe Verfahren für den differentiellen Eingangswiderstand angewendet, dabei wird ein Widerstand direkt an die Quelle U1 in Reihe mit dem Kondensator C1 geschaltet. 
 \\ Hierbei ergibt sich die Hälfte der Leerlaufspannung bei $R = 2,5k\Omega$
 
+
+\subsection{Bestimmung des Ein- und Ausgangswiderstandes (Näherungsformel)}
+\label{sec:bestimmung-des-ein}
+
+Wir wollen nun den differentiellen Ein- und Ausgangswiderstand über die Kennlinienfelder berechnen. Dazu betrachten wir nun zuerst den Eingangskennlinienfeld und legen im Arbeitspunkt $I_{B} = 10\mu A$ ein Steigungsdreieck an, um den differentiellen Eingangswiderstand zu berechnen.
+\begin{equation*}
+  r_{Id} = \frac{\Delta U_{BE}}{\Delta I_{B}} = \frac{681,86mV - 680,66mV}{10\mu A - 9,5\mu A} = \frac{1,2mV}{0,5\mu A} = 2400\Omega
+\end{equation*}
+Dieser Wert ist sehr nah an dem Eingangswiderstand, den wir aus der Messung bereits kennen.
+
+Mit dem gleichen Vorgehen wollen wir uns nun auch mit dem Ausgangswiderstand beschäftigen. Dazu betrachten wir nun das Ausgangskennlinienfeld aus der ersten Aufgabe erneut für den Arbeitspunkt $I_{B} = 10\mu A$.
+
+\begin{equation*}
+  r_{Od} = \frac{\Delta U_{CE}}{\Delta I_{CE}} = \frac{10V - 5V}{2,069mA - 1,993mA} = \frac{5V}{75,396\mu A} = 66,316k\Omega
+\end{equation*}
+
+Wir erkennen, dass aus der differentielle Ausgangswiderstand sehr weit weg von dem in der vorherigen Aufgabe ermitteltem Ausgangswiderstand ist. Woran dies liegt, können wir uns nicht erklären.
 \newpage
 
 \section{Spannungsstabilisierung}
